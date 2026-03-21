@@ -1,14 +1,14 @@
-import { notFound } from "next/navigation";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 
 export const dynamic = "force-dynamic";
 
-export default async function EntityPage({
-  params,
-}: {
+type PageProps = {
   params: Promise<{ slug: string }>;
-}) {
+};
+
+export default async function EntityPage({ params }: PageProps) {
   const { slug } = await params;
 
   const entity = await prisma.entity.findUnique({
@@ -31,11 +31,36 @@ export default async function EntityPage({
     <main className="min-h-screen bg-background text-foreground">
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-8 px-6 py-8">
         <section className="rounded-2xl border border-border p-6 shadow-sm">
-          <p className="text-sm text-muted-foreground">{entity.type}</p>
-          <h1 className="mt-2 text-3xl font-semibold tracking-tight">{entity.title}</h1>
-          {entity.summary ? (
-            <p className="mt-3 max-w-3xl text-sm text-muted-foreground">{entity.summary}</p>
-          ) : null}
+          <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+            <div>
+              <p className="text-sm text-muted-foreground">{entity.type}</p>
+              <h1 className="mt-2 text-3xl font-semibold tracking-tight">{entity.title}</h1>
+              {entity.summary ? (
+                <p className="mt-3 max-w-3xl text-sm text-muted-foreground">{entity.summary}</p>
+              ) : null}
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              <Link
+                href={`/entities/${entity.slug}/edit`}
+                className="inline-flex h-10 items-center justify-center rounded-xl border border-border px-4 text-sm transition hover:bg-accent"
+              >
+                Edit
+              </Link>
+              <Link
+                href={`/entities/${entity.slug}/relationships`}
+                className="inline-flex h-10 items-center justify-center rounded-xl border border-border px-4 text-sm transition hover:bg-accent"
+              >
+                Relationships
+              </Link>
+              <Link
+                href={`/entities/${entity.slug}/archive`}
+                className="inline-flex h-10 items-center justify-center rounded-xl border border-border px-4 text-sm transition hover:bg-accent"
+              >
+                Archive
+              </Link>
+            </div>
+          </div>
 
           <div className="mt-4 flex flex-wrap gap-2 text-xs text-muted-foreground">
             <span className="rounded-full border border-border px-3 py-1">{entity.status}</span>

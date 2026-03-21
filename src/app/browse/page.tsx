@@ -29,13 +29,10 @@ export default async function BrowsePage() {
     },
   });
 
-  const grouped = typeOrder.reduce<Record<string, typeof entities>>(
-    (acc, type) => {
-      acc[type] = entities.filter((entity) => entity.type === type);
-      return acc;
-    },
-    {}
-  );
+  const grouped = typeOrder.reduce<Record<string, typeof entities>>((acc, type) => {
+    acc[type] = entities.filter((entity) => entity.type === type);
+    return acc;
+  }, {});
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -67,9 +64,7 @@ export default async function BrowsePage() {
               <div key={type} className="rounded-2xl border border-border p-6 shadow-sm">
                 <div className="flex items-center justify-between gap-4">
                   <h2 className="text-lg font-semibold">{type}</h2>
-                  <span className="text-sm text-muted-foreground">
-                    {items.length} items
-                  </span>
+                  <span className="text-sm text-muted-foreground">{items.length} items</span>
                 </div>
 
                 <div className="mt-4 grid gap-3 md:grid-cols-2">
