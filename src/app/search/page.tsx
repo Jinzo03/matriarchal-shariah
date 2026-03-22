@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { EntityType } from "@/generated/prisma/client";
+import { Reveal } from "@/components/reveal";
 
 export const dynamic = "force-dynamic";
 
@@ -83,22 +84,23 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
             <div className="mt-4 space-y-3">
               {results.length > 0 ? (
-                results.map((item) => (
-                  <Link
-                    key={item.id}
-                    href={`/entities/${item.slug}`}
-                    className="block rounded-xl border border-border p-4 transition hover:bg-accent"
-                  >
-                    <div className="flex items-center justify-between gap-4">
-                      <p className="font-medium">{item.title}</p>
-                      <span className="text-xs text-muted-foreground">
-                        {typeLabels[item.type]}
-                      </span>
-                    </div>
-                    {item.summary ? (
-                      <p className="mt-1 text-sm text-muted-foreground">{item.summary}</p>
-                    ) : null}
-                  </Link>
+                results.map((item, index) => (
+                  <Reveal key={item.id} delay={index * 0.03}>
+                    <Link
+                      href={`/entities/${item.slug}`}
+                      className="block rounded-xl border border-border p-4 transition hover:bg-accent"
+                    >
+                      <div className="flex items-center justify-between gap-4">
+                        <p className="font-medium">{item.title}</p>
+                        <span className="text-xs text-muted-foreground">
+                          {typeLabels[item.type]}
+                        </span>
+                      </div>
+                      {item.summary ? (
+                        <p className="mt-1 text-sm text-muted-foreground">{item.summary}</p>
+                      ) : null}
+                    </Link>
+                  </Reveal>
                 ))
               ) : (
                 <div className="rounded-xl border border-dashed border-border p-6 text-sm text-muted-foreground">

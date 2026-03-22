@@ -1,8 +1,9 @@
 import { revalidatePath } from "next/cache";
 import { notFound, redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
-import { EntityStatus, EntityType, Visibility } from "@/generated/prisma/client";
 import { EntityForm } from "@/components/entity-form";
+import { Reveal } from "@/components/reveal";
+import { EntityStatus, EntityType, Visibility } from "@/generated/prisma/client";
 
 export const dynamic = "force-dynamic";
 
@@ -48,85 +49,89 @@ export default async function EditEntityPage({ params }: PageProps) {
   if (!entity) notFound();
 
   async function updateEntity(formData: FormData) {
-  "use server";
+    "use server";
   if (!entity) return;
-  
-  const title = String(formData.get("title") ?? "").trim();
-  if (!title) return;
 
-  const slugInput = String(formData.get("slug") ?? "").trim();
-  const nextSlug = slugInput || slugify(title);
-  const summary = String(formData.get("summary") ?? "").trim();
-  const body = String(formData.get("body") ?? "").trim();
-  const status = String(formData.get("status") ?? "DRAFT") as EntityStatus;
-  const visibility = String(formData.get("visibility") ?? "PRIVATE") as Visibility;
+    const title = String(formData.get("title") ?? "").trim();
+    if (!title) return;
+    
+    const slugInput = String(formData.get("slug") ?? "").trim();
+    const nextSlug = slugInput || slugify(title);
+    const summary = String(formData.get("summary") ?? "").trim();
+    const body = String(formData.get("body") ?? "").trim();
+    const status = String(formData.get("status") ?? "DRAFT") as EntityStatus;
+    const visibility = String(formData.get("visibility") ?? "PRIVATE") as Visibility;
 
-  const aliases = splitList(formData.get("aliases"));
-  const tags = splitList(formData.get("tags"));
-  const searchKeywords = splitList(formData.get("searchKeywords"));
+    const aliases = splitList(formData.get("aliases"));
+    const tags = splitList(formData.get("tags"));
+    const searchKeywords = splitList(formData.get("searchKeywords"));
 
-  const updated = await prisma.$transaction(async (tx) => {
-    const updatedEntity = await tx.entity.update({
-      where: { id: entity.id },
-      data: {
-        title,
-        slug: nextSlug,
-        summary: summary || null,
-        body: body || null,
-        status,
-        visibility,
-        aliases,
-        tags,
-        searchKeywords,
-        version: { increment: 1 },
-      },
+    const updated = await prisma.$transaction(async (tx) => {
+      const updatedEntity = await tx.entity.update({
+        where: { id: entity.id },
+        data: {
+          title,
+          slug: nextSlug,
+          summary: summary || null,
+          body: body || null,
+          status,
+          visibility,
+          aliases,
+          tags,
+          searchKeywords,
+          version: { increment: 1 },
+        },
+      });
+
+      await tx.entityRevision.create({
+        data: {
+          entityId: updatedEntity.id,
+          version: updatedEntity.version,
+          title: updatedEntity.title,
+          slug: updatedEntity.slug,
+          summary: updatedEntity.summary,
+          body: updatedEntity.body,
+          status: updatedEntity.status,
+          visibility: updatedEntity.visibility,
+          aliases: updatedEntity.aliases,
+          tags: updatedEntity.tags,
+          searchKeywords: updatedEntity.searchKeywords,
+        },
+      });
+
+      return updatedEntity;
     });
 
-    await tx.entityRevision.create({
-      data: {
-        entityId: updatedEntity.id,
-        version: updatedEntity.version,
-        title: updatedEntity.title,
-        slug: updatedEntity.slug,
-        summary: updatedEntity.summary,
-        body: updatedEntity.body,
-        status: updatedEntity.status,
-        visibility: updatedEntity.visibility,
-        aliases: updatedEntity.aliases,
-        tags: updatedEntity.tags,
-        searchKeywords: updatedEntity.searchKeywords,
-      },
-    });
-
-    return updatedEntity;
-  });
-
-  revalidatePath("/");
-  revalidatePath("/browse");
-  revalidatePath("/search");
-  revalidatePath(`/entities/${slug}`);
-  revalidatePath(`/entities/${updated.slug}`);
-  redirect(`/entities/${updated.slug}`);
-}
+    revalidatePath("/");
+    revalidatePath("/dashboard");
+    revalidatePath("/browse");
+    revalidatePath("/search");
+    revalidatePath(`/entities/${slug}`);
+    revalidatePath(`/entities/${updated.slug}`);
+    revalidatePath(`/entities/${updated.slug}/history`);
+    redirect(`/entities/${updated.slug}`);
+  }
 
   return (
-    <EntityForm
-      mode="edit"
-      title={`Edit ${typeLabels[entity.type]}`}
-      description="Update this entity and keep the universe connected."
-      submitLabel="Save Changes"
-      onSubmit={updateEntity}
-      values={{
-        title: entity.title,
-        slug: entity.slug,
-        summary: entity.summary,
-        body: entity.body,
-        status: entity.status,
-        visibility: entity.visibility,
-        aliases: entity.aliases,
-        tags: entity.tags,
-        searchKeywords: entity.searchKeywords,
-      }}
-    />
+    <Reveal>
+      <EntityForm
+        mode="edit"
+        title={`Edit ${typeLabels[entity.type]}`}
+        description="Update this entity and keep the universe connected."
+        submitLabel="Save Changes"
+        onSubmit={updateEntity}
+        values={{
+          title: entity.title,
+          slug: entity.slug,
+          summary: entity.summary,
+          body: entity.body,
+          status: entity.status,
+          visibility: entity.visibility,
+          aliases: entity.aliases,
+          tags: entity.tags,
+          searchKeywords: entity.searchKeywords,
+        }}
+      />
+    </Reveal>
   );
 }

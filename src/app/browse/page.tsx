@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { EntityType } from "@/generated/prisma/client";
+import { Reveal } from "@/components/reveal";
 
 export const dynamic = "force-dynamic";
 
@@ -75,16 +76,18 @@ export default async function BrowsePage() {
         ) : null}
 
         <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {typeOrder.map((type) => (
-            <div key={type} className="rounded-2xl border border-border p-4 shadow-sm">
-              <p className="text-sm text-muted-foreground">{typeLabels[type]}</p>
-              <p className="mt-2 text-2xl font-semibold">{grouped[type]?.length ?? 0}</p>
-            </div>
+          {typeOrder.map((type, index) => (
+            <Reveal key={type} delay={index * 0.03}>
+              <div className="rounded-2xl border border-border p-4 shadow-sm">
+                <p className="text-sm text-muted-foreground">{typeLabels[type]}</p>
+                <p className="mt-2 text-2xl font-semibold">{grouped[type]?.length ?? 0}</p>
+              </div>
+            </Reveal>
           ))}
         </section>
 
         <section className="space-y-8">
-          {typeOrder.map((type) => {
+          {typeOrder.map((type, typeIndex) => {
             const items = grouped[type] ?? [];
 
             return (
@@ -96,19 +99,20 @@ export default async function BrowsePage() {
 
                 {items.length > 0 ? (
                   <div className="mt-4 grid gap-3 md:grid-cols-2">
-                    {items.map((item) => (
-                      <Link
-                        key={item.id}
-                        href={`/entities/${item.slug}`}
-                        className="rounded-xl border border-border p-4 transition hover:bg-accent"
-                      >
-                        <p className="font-medium">{item.title}</p>
-                        {item.summary ? (
-                          <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
-                            {item.summary}
-                          </p>
-                        ) : null}
-                      </Link>
+                    {items.map((item, itemIndex) => (
+                      <Reveal key={item.id} delay={itemIndex * 0.03}>
+                        <Link
+                          href={`/entities/${item.slug}`}
+                          className="block rounded-xl border border-border p-4 transition hover:bg-accent"
+                        >
+                          <p className="font-medium">{item.title}</p>
+                          {item.summary ? (
+                            <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
+                              {item.summary}
+                            </p>
+                          ) : null}
+                        </Link>
+                      </Reveal>
                     ))}
                   </div>
                 ) : (
