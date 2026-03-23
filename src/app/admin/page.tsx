@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
+import { t } from "@/lib/locale";
+import { getRequestLocale } from "@/lib/locale.server";
 import { Reveal } from "@/components/reveal";
 import { AdminIndexNav } from "@/components/admin-index-nav";
 
 export const dynamic = "force-dynamic";
 
 export default async function AdminPage() {
+  const locale = await getRequestLocale();
   const [entityCount, archivedCount, relationshipCount, revisionCount] = await Promise.all([
     prisma.entity.count(),
     prisma.entity.count({ where: { status: "ARCHIVED" } }),
@@ -15,47 +18,68 @@ export default async function AdminPage() {
 
   const adminSections = [
     {
-      title: "Dashboard",
-      description: "System overview, maintenance shortcuts, and universe health.",
+      title: t(locale, "dashboard"),
+      description:
+        locale === "ar"
+          ? "نظرة عامة على النظام وروابط الصيانة ومؤشرات سلامة الكون."
+          : "System overview, maintenance shortcuts, and universe health.",
       href: "/admin",
     },
     {
-      title: "Content",
-      description: "Browse, archive, delete, and inspect universe content.",
+      title: t(locale, "content"),
+      description:
+        locale === "ar"
+          ? "تصفح المحتوى وأرشفه واحذفه وافحصه بسرعة."
+          : "Browse, archive, delete, and inspect universe content.",
       href: "/admin/content",
     },
     {
-      title: "Analytics",
-      description: "View basic counts and structural signals across the universe.",
+      title: t(locale, "analytics"),
+      description:
+        locale === "ar"
+          ? "اعرض الأعداد الأساسية والإشارات البنيوية عبر الكون."
+          : "View basic counts and structural signals across the universe.",
       href: "/admin/analytics",
     },
     {
-      title: "Settings",
-      description: "Simple maintenance preferences and admin configuration.",
+      title: t(locale, "settings"),
+      description:
+        locale === "ar"
+          ? "تفضيلات الصيانة البسيطة وإعدادات الإدارة."
+          : "Simple maintenance preferences and admin configuration.",
       href: "/admin/settings",
     },
     {
-      title: "Logs",
-      description: "Inspect recent changes, revision activity, and system notes.",
+      title: t(locale, "logs"),
+      description:
+        locale === "ar"
+          ? "راجع التغييرات الأخيرة ونشاط المراجعات وملاحظات النظام."
+          : "Inspect recent changes, revision activity, and system notes.",
       href: "/admin/logs",
     },
     {
-      title: "Support",
-      description: "Basic support and maintenance notes for the project.",
+      title: t(locale, "support"),
+      description:
+        locale === "ar"
+          ? "ملاحظات دعم وصيانة أساسية للمشروع."
+          : "Basic support and maintenance notes for the project.",
       href: "/admin/support",
     },
     {
-      title: "Import / Export",
-      description: "Backup or restore the universe in JSON form.",
+      title: t(locale, "importExport"),
+      description:
+        locale === "ar"
+          ? "أنشئ نسخة احتياطية أو استعد الكون بصيغة JSON."
+          : "Backup or restore the universe in JSON form.",
       href: "/admin/import-export",
     },
   ];
 
   const stats = [
-    { label: "Entities", value: entityCount },
-    { label: "Archived", value: archivedCount },
-    { label: "Relationships", value: relationshipCount },
-    { label: "Revisions", value: revisionCount },
+    { label: t(locale, "entities"), value: entityCount },
+    { label: t(locale, "archived"), value: archivedCount },
+    { label: t(locale, "relationships"), value: relationshipCount },
+    { label: t(locale, "revisions"), value: revisionCount },
   ];
 
   return (
@@ -63,11 +87,16 @@ export default async function AdminPage() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 py-8">
         <Reveal>
           <section className="ms-panel">
-            <p className="text-sm text-muted-foreground">Admin Panel</p>
-            <h1 className="mt-2 text-3xl font-semibold tracking-tight">Maintenance Hub</h1>
+            <p className="text-sm text-muted-foreground">
+              {locale === "ar" ? "لوحة الإدارة" : "Admin Panel"}
+            </p>
+            <h1 className="mt-2 text-3xl font-semibold tracking-tight">
+              {locale === "ar" ? "مركز الصيانة" : "Maintenance Hub"}
+            </h1>
             <p className="mt-3 max-w-3xl text-sm text-muted-foreground">
-              A lightweight control center for content, structure, logs, settings, and basic
-              operational tasks.
+              {locale === "ar"
+                ? "مركز تحكم خفيف للمحتوى والبنية والسجلات والإعدادات ومهام التشغيل الأساسية."
+                : "A lightweight control center for content, structure, logs, settings, and basic operational tasks."}
             </p>
 
             <div className="mt-5">
@@ -90,10 +119,7 @@ export default async function AdminPage() {
         <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {adminSections.map((section, index) => (
             <Reveal key={section.href} delay={index * 0.03}>
-              <Link
-                href={section.href}
-                className="block ms-panel-soft transition hover:bg-accent"
-              >
+              <Link href={section.href} className="block ms-panel-soft transition hover:bg-accent">
                 <p className="text-lg font-semibold">{section.title}</p>
                 <p className="mt-2 text-sm text-muted-foreground">{section.description}</p>
               </Link>

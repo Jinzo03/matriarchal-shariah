@@ -2,6 +2,8 @@ import Link from "next/link";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
+import { t } from "@/lib/locale";
+import { getRequestLocale } from "@/lib/locale.server";
 import { Reveal } from "@/components/reveal";
 import { AdminIndexNav } from "@/components/admin-index-nav";
 
@@ -18,6 +20,7 @@ function safeString(value: FormDataEntryValue | null) {
 }
 
 export default async function ImportExportPage() {
+  const locale = await getRequestLocale();
   const [entities, relationships, revisions] = await Promise.all([
     prisma.entity.findMany({ orderBy: { createdAt: "asc" } }),
     prisma.relationship.findMany({ orderBy: { createdAt: "asc" } }),
@@ -84,14 +87,18 @@ export default async function ImportExportPage() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 py-8">
         <Reveal>
           <section className="ms-panel">
-            <p className="text-sm text-muted-foreground">Admin / Import & Export</p>
-            <h1 className="mt-2 text-3xl font-semibold tracking-tight">Import / Export</h1>
+            <p className="text-sm text-muted-foreground">
+              {locale === "ar" ? "الإدارة / الاستيراد والتصدير" : "Admin / Import & Export"}
+            </p>
+            <h1 className="mt-2 text-3xl font-semibold tracking-tight">{t(locale, "importExport")}</h1>
             <p className="mt-3 max-w-3xl text-sm text-muted-foreground">
-              Export the universe as JSON or paste a JSON backup to restore it.
+              {locale === "ar"
+                ? "صدّر الكون بصيغة JSON أو ألصق نسخة احتياطية لاستعادته."
+                : "Export the universe as JSON or paste a JSON backup to restore it."}
             </p>
             <div className="mt-4 flex items-center gap-4">
               <Link href="/admin" className="text-sm underline">
-                Back to Admin Hub
+                {t(locale, "backToAdminHub")}
               </Link>
               <AdminIndexNav />
             </div>
@@ -101,10 +108,8 @@ export default async function ImportExportPage() {
         <section className="grid gap-6 lg:grid-cols-2">
           <Reveal delay={0.08}>
             <div className="ms-panel">
-              <h2 className="text-lg font-semibold">Export JSON</h2>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Copy this JSON to keep a backup of the current universe.
-              </p>
+              <h2 className="text-lg font-semibold">{t(locale, "exportJson")}</h2>
+              <p className="mt-2 text-sm text-muted-foreground">{t(locale, "exportBackupHelp")}</p>
               <textarea
                 readOnly
                 value={exportJson}
@@ -115,25 +120,20 @@ export default async function ImportExportPage() {
 
           <Reveal delay={0.14}>
             <div className="ms-panel">
-              <h2 className="text-lg font-semibold">Import JSON</h2>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Paste a full export bundle here. This replaces the current data.
-              </p>
+              <h2 className="text-lg font-semibold">{t(locale, "importJson")}</h2>
+              <p className="mt-2 text-sm text-muted-foreground">{t(locale, "importBackupHelp")}</p>
 
               <form action={importUniverse} className="mt-4 space-y-4">
                 <textarea
                   name="json"
                   rows={24}
                   className="w-full rounded-xl border border-border bg-background px-4 py-3 font-mono text-xs outline-none transition focus:ring-2 focus:ring-ring"
-                  placeholder="Paste export JSON here"
+                  placeholder={t(locale, "importPlaceholder")}
                 />
 
                 <div className="flex justify-end">
-                  <button
-                    type="submit"
-                    className="ms-button"
-                  >
-                    Import Universe
+                  <button type="submit" className="ms-button">
+                    {t(locale, "importUniverse")}
                   </button>
                 </div>
               </form>

@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
+import { formatLocaleDateTime, t } from "@/lib/locale";
+import { getRequestLocale } from "@/lib/locale.server";
 import { Reveal } from "@/components/reveal";
 import { AdminIndexNav } from "@/components/admin-index-nav";
 
 export const dynamic = "force-dynamic";
 
 export default async function AdminContentPage() {
+  const locale = await getRequestLocale();
   const [entities, archived, relationships, revisions] = await Promise.all([
     prisma.entity.count(),
     prisma.entity.count({ where: { status: "ARCHIVED" } }),
@@ -31,14 +34,20 @@ export default async function AdminContentPage() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 py-8">
         <Reveal>
           <section className="ms-panel">
-            <p className="text-sm text-muted-foreground">Admin / Content</p>
-            <h1 className="mt-2 text-3xl font-semibold tracking-tight">Content Maintenance</h1>
+            <p className="text-sm text-muted-foreground">
+              {locale === "ar" ? "الإدارة / المحتوى" : "Admin / Content"}
+            </p>
+            <h1 className="mt-2 text-3xl font-semibold tracking-tight">
+              {locale === "ar" ? "صيانة المحتوى" : "Content Maintenance"}
+            </h1>
             <p className="mt-3 max-w-3xl text-sm text-muted-foreground">
-              Inspect the universe, keep content clean, and jump into entity maintenance quickly.
+              {locale === "ar"
+                ? "افحص الكون، وحافظ على المحتوى منظمًا، وانتقل بسرعة إلى صيانة العناصر."
+                : "Inspect the universe, keep content clean, and jump into entity maintenance quickly."}
             </p>
             <div className="mt-4">
               <Link href="/admin" className="text-sm underline">
-                Back to Admin Hub
+                {t(locale, "backToAdminHub")}
               </Link>
             </div>
 
@@ -50,10 +59,10 @@ export default async function AdminContentPage() {
 
         <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {[
-            { label: "Entities", value: entities },
-            { label: "Archived", value: archived },
-            { label: "Relationships", value: relationships },
-            { label: "Revisions", value: revisions },
+            { label: t(locale, "entities"), value: entities },
+            { label: t(locale, "archived"), value: archived },
+            { label: t(locale, "relationships"), value: relationships },
+            { label: t(locale, "revisions"), value: revisions },
           ].map((stat, index) => (
             <Reveal key={stat.label} delay={index * 0.03}>
               <div className="ms-panel-soft">
@@ -67,9 +76,9 @@ export default async function AdminContentPage() {
         <Reveal delay={0.08}>
           <section className="ms-panel">
             <div className="flex items-center justify-between gap-4">
-              <h2 className="text-lg font-semibold">Recent Content</h2>
+              <h2 className="text-lg font-semibold">{t(locale, "recentContent")}</h2>
               <Link href="/browse" className="text-sm text-muted-foreground hover:underline">
-                Open browse
+                {t(locale, "openBrowse")}
               </Link>
             </div>
 
@@ -85,7 +94,7 @@ export default async function AdminContentPage() {
                       <span className="text-xs text-muted-foreground">{item.type}</span>
                     </div>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      {item.status} · {item.updatedAt.toLocaleString()}
+                      {item.status} | {formatLocaleDateTime(locale, item.updatedAt)}
                     </p>
                   </Link>
                 </Reveal>

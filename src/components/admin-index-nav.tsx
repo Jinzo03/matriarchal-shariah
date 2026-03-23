@@ -3,23 +3,25 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "motion/react";
+import { useLocale } from "@/components/locale-provider";
+import { t } from "@/lib/locale";
 
 type AdminLink = {
   href: string;
-  label: string;
+  keyName: "dashboard" | "content" | "analytics" | "settings" | "logs" | "support" | "importExport";
   isActive: (pathname: string) => boolean;
 };
 
 const adminLinks: AdminLink[] = [
-  { href: "/admin", label: "Dashboard", isActive: (p) => p === "/admin" },
-  { href: "/admin/content", label: "Content", isActive: (p) => p.startsWith("/admin/content") },
-  { href: "/admin/analytics", label: "Analytics", isActive: (p) => p.startsWith("/admin/analytics") },
-  { href: "/admin/settings", label: "Settings", isActive: (p) => p.startsWith("/admin/settings") },
-  { href: "/admin/logs", label: "Logs", isActive: (p) => p.startsWith("/admin/logs") },
-  { href: "/admin/support", label: "Support", isActive: (p) => p.startsWith("/admin/support") },
+  { href: "/admin", keyName: "dashboard", isActive: (p) => p === "/admin" },
+  { href: "/admin/content", keyName: "content", isActive: (p) => p.startsWith("/admin/content") },
+  { href: "/admin/analytics", keyName: "analytics", isActive: (p) => p.startsWith("/admin/analytics") },
+  { href: "/admin/settings", keyName: "settings", isActive: (p) => p.startsWith("/admin/settings") },
+  { href: "/admin/logs", keyName: "logs", isActive: (p) => p.startsWith("/admin/logs") },
+  { href: "/admin/support", keyName: "support", isActive: (p) => p.startsWith("/admin/support") },
   {
     href: "/admin/import-export",
-    label: "Import/Export",
+    keyName: "importExport",
     isActive: (p) => p.startsWith("/admin/import-export"),
   },
 ];
@@ -27,6 +29,7 @@ const adminLinks: AdminLink[] = [
 export function AdminIndexNav() {
   const pathname = usePathname();
   const reduceMotion = useReducedMotion();
+  const { locale } = useLocale();
 
   return (
     <motion.nav
@@ -65,7 +68,7 @@ export function AdminIndexNav() {
                   transition={{ type: "spring", stiffness: 500, damping: 40 }}
                 />
               ) : null}
-              <span className="relative z-10">{link.label}</span>
+              <span className="relative z-10">{t(locale, link.keyName)}</span>
             </Link>
           </motion.div>
         );
