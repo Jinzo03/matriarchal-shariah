@@ -152,36 +152,47 @@ export default async function EntityPage({ params }: PageProps) {
             </div>
 
             {entity.type === "STORY" && externalLinks ? (
-              <div className="mt-6 ms-panel-soft p-5">
-                <p className="text-sm text-muted-foreground">
-                  {locale === "ar" ? "متابعة القراءة" : "Continue reading"}
-                </p>
+  <div className="mt-6 ms-panel-soft p-5">
+    <div className="flex flex-wrap gap-2">
+      <span className="rounded-full border border-border px-2.5 py-1 text-[11px] text-muted-foreground">
+        {locale === "ar" ? "فصل معاينة" : "Preview chapter"}
+      </span>
+      <span className="rounded-full border border-border px-2.5 py-1 text-[11px] text-muted-foreground">
+        {locale === "ar" ? "قراءة خارجية" : "External reading"}
+      </span>
+    </div>
 
-                <div className="mt-3 flex flex-wrap gap-3">
-                  {externalLinks.wattpad ? (
-                    <a
-                      href={externalLinks.wattpad}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex h-10 items-center justify-center rounded-xl border border-border px-4 text-sm transition hover:bg-accent"
-                    >
-                      {locale === "ar" ? "متابعة على Wattpad" : "Continue on Wattpad"}
-                    </a>
-                  ) : null}
+    <p className="mt-3 text-sm text-muted-foreground">
+      {locale === "ar"
+        ? "يمكنك قراءة المعاينة هنا، ثم المتابعة إلى المنصة الخارجية إذا أردت إكمال القصة الطويلة."
+        : "Read the preview here, then continue on the external platform if you want the full long-form story."}
+    </p>
 
-                  {externalLinks.ao3 ? (
-                    <a
-                      href={externalLinks.ao3}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex h-10 items-center justify-center rounded-xl border border-border px-4 text-sm transition hover:bg-accent"
-                    >
-                      {locale === "ar" ? "متابعة على AO3" : "Continue on AO3"}
-                    </a>
-                  ) : null}
-                </div>
-              </div>
-            ) : null}
+    <div className="mt-4 flex flex-wrap gap-3">
+      {externalLinks.wattpad ? (
+        <a
+          href={externalLinks.wattpad}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex h-10 items-center justify-center rounded-full border border-border px-4 text-sm transition hover:bg-accent"
+        >
+          {locale === "ar" ? "متابعة على Wattpad" : "Continue on Wattpad"}
+        </a>
+      ) : null}
+
+      {externalLinks.ao3 ? (
+        <a
+          href={externalLinks.ao3}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex h-10 items-center justify-center rounded-full border border-border px-4 text-sm transition hover:bg-accent"
+        >
+          {locale === "ar" ? "متابعة على AO3" : "Continue on AO3"}
+        </a>
+      ) : null}
+    </div>
+  </div>
+) : null}
           </section>
         </Reveal>
 

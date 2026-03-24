@@ -70,6 +70,7 @@ function entityPayload(entity: NormalizedEntity) {
     aliases: canonicalizeStrings(entity.aliases ?? []),
     tags: canonicalizeStrings(entity.tags ?? []),
     searchKeywords: canonicalizeStrings(entity.searchKeywords ?? []),
+    metadata: entity.metadata ?? null,
   };
 }
 
@@ -307,6 +308,7 @@ export async function applyUniverseImport(
               aliases: next.aliases,
               tags: next.tags,
               searchKeywords: next.searchKeywords,
+              metadata: next.metadata,
               version: 1,
             },
           });
@@ -358,7 +360,8 @@ export async function applyUniverseImport(
           existing.visibility !== next.visibility ||
           !sameStringArray(existing.aliases, next.aliases) ||
           !sameStringArray(existing.tags, next.tags) ||
-          !sameStringArray(existing.searchKeywords, next.searchKeywords);
+          !sameStringArray(existing.searchKeywords, next.searchKeywords) ||
+          !sameJson(existing.metadata, next.metadata);
 
         if (!changed) {
           entityRecordBySlug.set(existing.slug, {
@@ -384,6 +387,7 @@ export async function applyUniverseImport(
             aliases: next.aliases,
             tags: next.tags,
             searchKeywords: next.searchKeywords,
+            metadata: next.metadata,
             version: { increment: 1 },
           },
         });

@@ -74,6 +74,7 @@ function entityPayload(entity: NormalizedEntity) {
     aliases: canonicalizeStrings(entity.aliases ?? []),
     tags: canonicalizeStrings(entity.tags ?? []),
     searchKeywords: canonicalizeStrings(entity.searchKeywords ?? []),
+    metadata: entity.metadata ?? null,
   };
 }
 
@@ -175,6 +176,7 @@ export async function dryRunImport(
           tags: true,
           searchKeywords: true,
           featuredImage: true,
+          metadata: true,
         },
       }),
       prisma.mediaAsset.findMany({
@@ -296,7 +298,8 @@ export async function dryRunImport(
       existing.visibility !== next.visibility ||
       !sameStringArray(existing.aliases, next.aliases) ||
       !sameStringArray(existing.tags, next.tags) ||
-      !sameStringArray(existing.searchKeywords, next.searchKeywords);
+      !sameStringArray(existing.searchKeywords, next.searchKeywords) ||
+      !sameJson(existing.metadata, next.metadata);
 
     if (changed) {
       entityCounts.update += 1;

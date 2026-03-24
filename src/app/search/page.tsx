@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
-import { getEntityTypeLabel, t } from "@/lib/locale";
+import { EntityType } from "@/generated/prisma/client";
 import { getRequestLocale } from "@/lib/locale.server";
+import { t } from "@/lib/locale";
 import { Reveal } from "@/components/reveal";
 
 export const dynamic = "force-dynamic";
@@ -9,6 +10,30 @@ export const dynamic = "force-dynamic";
 type SearchPageProps = {
   searchParams: Promise<{ q?: string }>;
 };
+
+const typeLabels: Record<EntityType, string> = {
+  CHARACTER: "Character",
+  STORY: "Story",
+  INSTITUTION: "Institution",
+  LOCATION: "Location",
+  DOCTRINE: "Doctrine",
+  EVENT: "Event",
+  TERM: "Term",
+  ARTIFACT: "Artifact",
+  OTHER: "Other",
+};
+
+function hasExternalLinks(metadata: unknown): boolean {
+  if (!metadata || typeof metadata !== "object") return false;
+
+  const value = metadata as Record<string, unknown>;
+  const links = value.externalLinks;
+
+  if (!links || typeof links !== "object") return false;
+
+  const record = links as Record<string, unknown>;
+  return typeof record.wattpad === "string" || typeof record.ao3 === "string";
+}
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
   const locale = await getRequestLocale();
@@ -35,6 +60,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           slug: true,
           type: true,
           summary: true,
+          metadata: true,
         },
       })
     : [];
@@ -44,9 +70,17 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-8 px-6 py-8">
         <Reveal>
           <section>
-            <p className="text-sm text-muted-foreground">{t(locale, "searchUniverse")}</p>
-            <h1 className="mt-2 text-3xl font-semibold tracking-tight">{t(locale, "findAnything")}</h1>
-            <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{t(locale, "searchIntro")}</p>
+            <p className="text-sm text-muted-foreground">
+              {locale === "ar" ? "بحث الكون" : "Search Universe"}
+            </p>
+            <h1 className="mt-2 text-3xl font-semibold tracking-tight">
+              {locale === "ar" ? "اعثر على أي شيء" : "Find anything"}
+            </h1>
+            <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+              {locale === "ar"
+                ? "ابحث بالعنوان أو الملخص أو النص أو الرابط أو الاسم البديل أو الوسم أو الكلمة المفتاحية."
+                : "Search by title, summary, body, slug, alias, tag, or keyword."}
+            </p>
           </section>
         </Reveal>
 
@@ -59,52 +93,73 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
               className="ms-input"
             />
             <button type="submit" className="ms-button">
-              {t(locale, "search")}
+              {locale === "ar" ? "بحث" : "Search"}
             </button>
           </form>
         </Reveal>
 
         {query ? (
           <Reveal delay={0.1}>
-            <section className="ms-panel">
+            <section className="ms-panel p-6">
               <div className="flex items-center justify-between gap-4">
-                <h2 className="text-lg font-semibold">{t(locale, "results")}</h2>
-                <span className="text-sm text-muted-foreground">
-                  {results.length} {t(locale, "found")}
-                </span>
+                <h2 className="text-lg font-semibold">
+                  {locale === "ar" ? "النتائج" : "Results"}
+                </h2>
+                <span className="text-sm text-muted-foreground">{results.length} found</span>
               </div>
 
               <div className="mt-4 space-y-3">
                 {results.length > 0 ? (
-                  results.map((item, index) => (
-                    <Reveal key={item.id} delay={index * 0.03}>
-                      <Link
-                        href={`/entities/${item.slug}`}
-                        className="block rounded-xl border border-border p-4 transition hover:bg-accent"
-                      >
-                        <div className="flex items-center justify-between gap-4">
-                          <p className="font-medium">{item.title}</p>
-                          <span className="text-xs text-muted-foreground">
-                            {getEntityTypeLabel(locale, item.type)}
-                          </span>
-                        </div>
-                        {item.summary ? (
-                          <p className="mt-1 text-sm text-muted-foreground">{item.summary}</p>
-                        ) : null}
-                      </Link>
-                    </Reveal>
-                  ))
+                  results.map((item, index) => {
+                    const storyHasExternalLinks =
+                      item.type === EntityType.STORY && hasExternalLinks(item.metadata);
+
+                    return (
+                      <Reveal key={item.id} delay={index * 0.03}>
+                        <Link
+                          href={`/entities/${item.slug}`}
+                          className="block rounded-xl border border-border p-4 transition hover:bg-accent"
+                        >
+                          <div className="flex items-start justify-between gap-4">
+                            <div>
+                              <p className="font-medium">{item.title}</p>
+                              {storyHasExternalLinks ? (
+                                <div className="mt-2 flex flex-wrap gap-2">
+                                  <span className="rounded-full border border-border px-2.5 py-1 text-[11px] text-muted-foreground">
+                                    {locale === "ar" ? "فصل معاينة" : "Preview chapter"}
+                                  </span>
+                                  <span className="rounded-full border border-border px-2.5 py-1 text-[11px] text-muted-foreground">
+                                    {locale === "ar" ? "قراءة خارجية" : "External reading"}
+                                  </span>
+                                </div>
+                              ) : null}
+                            </div>
+
+                            <span className="text-xs text-muted-foreground">
+                              {typeLabels[item.type]}
+                            </span>
+                          </div>
+
+                          {item.summary ? (
+                            <p className="mt-2 text-sm text-muted-foreground">{item.summary}</p>
+                          ) : null}
+                        </Link>
+                      </Reveal>
+                    );
+                  })
                 ) : (
                   <div className="rounded-xl border border-dashed border-border p-6 text-sm text-muted-foreground">
                     <p>
-                      {t(locale, "noResultsFor")} &quot;{query}&quot;.
+                      {locale === "ar"
+                        ? `لا توجد نتائج لـ “${query}”.`
+                        : `No results found for “${query}”.`}
                     </p>
                     <p className="mt-2">
-                      {t(locale, "tryAnotherTerm")}{" "}
+                      {locale === "ar" ? "جرّب مصطلحًا آخر أو " : "Try another term, or "}
                       <Link href="/browse" className="underline">
-                        {t(locale, "browseUniverseLower")}
+                        {locale === "ar" ? "تصفح الكون" : "browse the universe"}
                       </Link>
-                      .
+                      {locale === "ar" ? "." : "."}
                     </p>
                   </div>
                 )}
@@ -113,12 +168,12 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           </Reveal>
         ) : (
           <Reveal delay={0.1}>
-            <section className="ms-panel text-sm text-muted-foreground">
-              {t(locale, "enterSearchTerm")}{" "}
+            <section className="ms-panel p-6 text-sm text-muted-foreground">
+              {locale === "ar" ? "أدخل كلمة بحث للبدء، أو " : "Enter a search term to begin, or "}
               <Link href="/browse" className="underline">
-                {t(locale, "browseUniverseLower")}
+                {locale === "ar" ? "تصفح الكون" : "browse the universe"}
               </Link>
-              .
+              {locale === "ar" ? "." : "."}
             </section>
           </Reveal>
         )}
