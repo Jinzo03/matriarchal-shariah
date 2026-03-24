@@ -39,6 +39,46 @@ function getExternalLinks(metadata: unknown): ExternalLinks | null {
   return { wattpad, ao3 };
 }
 
+function WattpadMark() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className="h-4 w-4 shrink-0"
+      fill="none"
+    >
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="#fe5009" />
+      <path
+        d="M7.2 8.2l1.6 7.7 1.8-4.9 1.7 4.9 1.6-7.7"
+        stroke="white"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function Ao3Mark() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className="h-4 w-4 shrink-0"
+      fill="none"
+    >
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="currentColor" />
+      <path
+        d="M8 16l8-8M10 16l8-8M6.8 9.2h3.8M13.2 15h3.8"
+        stroke="hsl(var(--background))"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export default async function EntityPage({ params }: PageProps) {
   const locale = await getRequestLocale();
   const { slug } = await params;
@@ -152,47 +192,51 @@ export default async function EntityPage({ params }: PageProps) {
             </div>
 
             {entity.type === "STORY" && externalLinks ? (
-  <div className="mt-6 ms-panel-soft p-5">
-    <div className="flex flex-wrap gap-2">
-      <span className="rounded-full border border-border px-2.5 py-1 text-[11px] text-muted-foreground">
-        {locale === "ar" ? "فصل معاينة" : "Preview chapter"}
-      </span>
-      <span className="rounded-full border border-border px-2.5 py-1 text-[11px] text-muted-foreground">
-        {locale === "ar" ? "قراءة خارجية" : "External reading"}
-      </span>
-    </div>
+              <div className="mt-6 ms-panel-soft p-5">
+                <div className="flex flex-wrap gap-2">
+                  <span className="rounded-full border border-border px-2.5 py-1 text-[11px] text-muted-foreground">
+                    {locale === "ar" ? "فصل معاينة" : "Preview chapter"}
+                  </span>
+                  <span className="rounded-full border border-border px-2.5 py-1 text-[11px] text-muted-foreground">
+                    {locale === "ar" ? "قراءة خارجية" : "External reading"}
+                  </span>
+                </div>
 
-    <p className="mt-3 text-sm text-muted-foreground">
-      {locale === "ar"
-        ? "يمكنك قراءة المعاينة هنا، ثم المتابعة إلى المنصة الخارجية إذا أردت إكمال القصة الطويلة."
-        : "Read the preview here, then continue on the external platform if you want the full long-form story."}
-    </p>
+                <p className="mt-3 text-sm text-muted-foreground">
+                  {locale === "ar"
+                    ? "اقرأ المعاينة هنا، ثم تابع على المنصة الخارجية إذا أردت إكمال القصة الطويلة."
+                    : "Read the preview here, then continue on the external platform if you want the full long-form story."}
+                </p>
 
-    <div className="mt-4 flex flex-wrap gap-3">
-      {externalLinks.wattpad ? (
-        <a
-          href={externalLinks.wattpad}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex h-10 items-center justify-center rounded-full border border-border px-4 text-sm transition hover:bg-accent"
-        >
-          {locale === "ar" ? "متابعة على Wattpad" : "Continue on Wattpad"}
-        </a>
-      ) : null}
+                <div className="mt-4 flex flex-wrap gap-3">
+                  {externalLinks.wattpad ? (
+                    <a
+                      href={externalLinks.wattpad}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-border px-4 text-sm transition hover:bg-accent"
+                    >
+                      <WattpadMark />
+                      <span>
+                        {locale === "ar" ? "متابعة على Wattpad" : "Continue on Wattpad"}
+                      </span>
+                    </a>
+                  ) : null}
 
-      {externalLinks.ao3 ? (
-        <a
-          href={externalLinks.ao3}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex h-10 items-center justify-center rounded-full border border-border px-4 text-sm transition hover:bg-accent"
-        >
-          {locale === "ar" ? "متابعة على AO3" : "Continue on AO3"}
-        </a>
-      ) : null}
-    </div>
-  </div>
-) : null}
+                  {externalLinks.ao3 ? (
+                    <a
+                      href={externalLinks.ao3}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-border px-4 text-sm transition hover:bg-accent"
+                    >
+                      <Ao3Mark />
+                      <span>{locale === "ar" ? "متابعة على AO3" : "Continue on AO3"}</span>
+                    </a>
+                  ) : null}
+                </div>
+              </div>
+            ) : null}
           </section>
         </Reveal>
 
@@ -216,7 +260,9 @@ export default async function EntityPage({ params }: PageProps) {
                 </div>
                 <div>
                   <dt className="text-muted-foreground">{t(locale, "aliases")}</dt>
-                  <dd>{entity.aliases.length > 0 ? entity.aliases.join(", ") : t(locale, "none")}</dd>
+                  <dd>
+                    {entity.aliases.length > 0 ? entity.aliases.join(", ") : t(locale, "none")}
+                  </dd>
                 </div>
                 <div>
                   <dt className="text-muted-foreground">{t(locale, "searchKeywords")}</dt>

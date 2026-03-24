@@ -6,6 +6,7 @@ import { t } from "@/lib/locale";
 import { getRequestLocale } from "@/lib/locale.server";
 import { Reveal } from "@/components/reveal";
 import { AdminIndexNav } from "@/components/admin-index-nav";
+import { FilePicker } from "@/components/file-picker";
 import { dryRunImport, type ImportPreview } from "@/lib/importer";
 import { applyUniverseImport } from "@/lib/import-apply";
 import { UniversePackageSchema, type UniversePackage } from "@/lib/import-schema";
@@ -30,10 +31,6 @@ function isPreviewSummary(value: unknown): value is PreviewSummary {
     !!record.preview &&
     typeof record.createdAt === "string"
   );
-}
-
-function safeString(value: FormDataEntryValue | null) {
-  return typeof value === "string" ? value : "";
 }
 
 function formatCountsBlock(counts: { create: number; update: number; skip: number }) {
@@ -207,11 +204,15 @@ export default async function ImportExportPage({
                   <span className="text-sm font-medium">
                     {locale === "ar" ? "ملف الحزمة" : "Package file"}
                   </span>
-                  <input
-                    type="file"
+                  <FilePicker
                     name="package"
                     accept="application/json,.json"
-                    className="ms-input pt-2"
+                    label={locale === "ar" ? "\u0627\u062e\u062a\u0631 \u0645\u0644\u0641\u064b\u0627" : "Choose File"}
+                    emptyLabel={
+                      locale === "ar"
+                        ? "\u0644\u0645 \u064a\u062a\u0645 \u0627\u062e\u062a\u064a\u0627\u0631 \u0645\u0644\u0641 \u0628\u0639\u062f"
+                        : "No file selected"
+                    }
                   />
                 </label>
 
