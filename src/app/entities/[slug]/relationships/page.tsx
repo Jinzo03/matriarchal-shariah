@@ -4,6 +4,11 @@ import { notFound, redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { t } from "@/lib/locale";
 import { getRequestLocale } from "@/lib/locale.server";
+import {
+  getRelationshipLabel,
+  isRelationshipAllowed,
+  isRelationshipType,
+} from "@/lib/relationships";
 import { Reveal } from "@/components/reveal";
 import { RelationshipType } from "@/generated/prisma/client";
 
@@ -30,23 +35,6 @@ const relationshipOptions: RelationshipType[] = [
   RelationshipType.RELATED_TO,
 ];
 
-const relationshipLabels: Record<RelationshipType, { en: string; ar: string }> = {
-  BELONGS_TO: { en: "Belongs to", ar: "ينتمي إلى" },
-  APPEARS_IN: { en: "Appears in", ar: "يظهر في" },
-  LOCATED_IN: { en: "Located in", ar: "يقع في" },
-  RULES_OVER: { en: "Rules over", ar: "يحكم" },
-  CREATED_BY: { en: "Created by", ar: "أنشأه" },
-  PRECEDES: { en: "Precedes", ar: "يسبق" },
-  FOLLOWS: { en: "Follows", ar: "يتبع" },
-  OPPOSES: { en: "Opposes", ar: "يعارض" },
-  SUPPORTS: { en: "Supports", ar: "يدعم" },
-  REFERENCES: { en: "References", ar: "يشير إلى" },
-  AFFILIATED_WITH: { en: "Affiliated with", ar: "منتسب إلى" },
-  IS_A: { en: "Is a", ar: "هو" },
-  PART_OF: { en: "Part of", ar: "جزء من" },
-  RELATED_TO: { en: "Related to", ar: "مرتبط بـ" },
-};
-
 export default async function EntityRelationshipsPage({ params }: PageProps) {
   const locale = await getRequestLocale();
   const { slug } = await params;
@@ -66,15 +54,17 @@ export default async function EntityRelationshipsPage({ params }: PageProps) {
 
     const relationshipType = String(
       formData.get("relationshipType") ?? "RELATED_TO"
-    ) as RelationshipType;
+    ).trim();
     const targetSlug = String(formData.get("targetSlug") ?? "").trim();
     const notes = String(formData.get("notes") ?? "").trim();
 
     if (!targetSlug) return;
+    if (!isRelationshipType(relationshipType)) return;
 
     const target = await prisma.entity.findUnique({ where: { slug: targetSlug } });
     if (!target) return;
     if (!entity) return;
+    if (!isRelationshipAllowed(relationshipType, entity.type, target.type)) return;
 
     await prisma.relationship.create({
       data: {
@@ -135,7 +125,7 @@ export default async function EntityRelationshipsPage({ params }: PageProps) {
                   >
                     {relationshipOptions.map((option) => (
                       <option key={option} value={option}>
-                        {relationshipLabels[option][locale]}
+                        {getRelationshipLabel(option, locale, "outgoing")}
                       </option>
                     ))}
                   </select>
@@ -146,7 +136,7 @@ export default async function EntityRelationshipsPage({ params }: PageProps) {
                   <input
                     name="targetSlug"
                     className="ms-input"
-                    placeholder={locale === "ar" ? "معرّف-العنصر-الهدف" : "the-target-entity"}
+                    placeholder={locale === "ar" ? "معرف-العنصر-الهدف" : "the-target-entity"}
                   />
                 </label>
               </div>
@@ -183,7 +173,7 @@ export default async function EntityRelationshipsPage({ params }: PageProps) {
                           <p className="font-medium">{relationship.targetEntity.title}</p>
                         </Link>
                         <p className="text-sm text-muted-foreground">
-                          {relationshipLabels[relationship.type][locale]}
+                          {getRelationshipLabel(relationship.type, locale, "outgoing")}
                         </p>
                         {relationship.notes ? (
                           <p className="mt-1 text-sm text-muted-foreground">{relationship.notes}</p>
@@ -200,7 +190,9 @@ export default async function EntityRelationshipsPage({ params }: PageProps) {
                   ))
                 ) : (
                   <p className="text-sm text-muted-foreground">
-                    {locale === "ar" ? "لا توجد علاقات صادرة بعد." : "No outgoing relationships yet."}
+                    {locale === "ar"
+                      ? "لا توجد علاقات صادرة بعد."
+                      : "No outgoing relationships yet."}
                   </p>
                 )}
               </div>
@@ -219,7 +211,7 @@ export default async function EntityRelationshipsPage({ params }: PageProps) {
                           <p className="font-medium">{relationship.sourceEntity.title}</p>
                         </Link>
                         <p className="text-sm text-muted-foreground">
-                          {relationshipLabels[relationship.type][locale]}
+                          {getRelationshipLabel(relationship.type, locale, "incoming")}
                         </p>
                         {relationship.notes ? (
                           <p className="mt-1 text-sm text-muted-foreground">{relationship.notes}</p>
@@ -236,7 +228,9 @@ export default async function EntityRelationshipsPage({ params }: PageProps) {
                   ))
                 ) : (
                   <p className="text-sm text-muted-foreground">
-                    {locale === "ar" ? "لا توجد علاقات واردة بعد." : "No incoming relationships yet."}
+                    {locale === "ar"
+                      ? "لا توجد علاقات واردة بعد."
+                      : "No incoming relationships yet."}
                   </p>
                 )}
               </div>

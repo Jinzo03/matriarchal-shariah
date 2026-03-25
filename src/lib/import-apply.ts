@@ -18,6 +18,7 @@ import {
   resolveMediaAsset,
   resolveTargetEntity,
 } from "@/lib/import-resolver";
+import { isRelationshipAllowed } from "@/lib/relationships";
 import type { ImportPreview } from "@/lib/importer";
 
 type ApplyOptions = {
@@ -531,6 +532,37 @@ export async function applyUniverseImport(
                 details: {
                   relationType: relation.type,
                   targetId: relation.targetId,
+                },
+              },
+            });
+
+            failedCount += 1;
+            continue;
+          }
+
+          if (
+            !isRelationshipAllowed(
+              relation.type as RelationshipType,
+              sourceRecord.type,
+              targetRecord.type
+            )
+          ) {
+            warnings.push(
+              `Invalid ${relation.type} relationship from "${entity.slug}" (${sourceRecord.type}) to "${targetSlug}" (${targetRecord.type}).`
+            );
+
+            await tx.importLog.create({
+              data: {
+                importJobId: job.id,
+                level: ImportLogLevel.WARN,
+                stage: "RELATION_SKIP",
+                message: `Invalid relationship ${relation.type} for ${entity.slug} -> ${targetSlug}`,
+                entitySlug: entity.slug,
+                details: {
+                  relationType: relation.type,
+                  sourceType: sourceRecord.type,
+                  targetSlug,
+                  targetType: targetRecord.type,
                 },
               },
             });

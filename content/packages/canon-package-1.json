@@ -1,0 +1,148 @@
+{
+  "packageId": "pkg.canon-package-1",
+  "version": "1.0.0",
+  "title": "Canon package 1",
+  "description": "the actual first canon package",
+  "source": "manual test package",
+  "characters": [
+    {
+      "id": "char.sheikha-qamar-al-zahra",
+      "type": "CHARACTER",
+      "slug": "sheikha-qamar-al-zahra",
+      "title": "Sheikha Qamar al-Zahra",
+      "summary": "A central sheikha and the antagonist of the story ' The 'Shams' Rise '.",
+      "body": "Sheikha Qamar is a revered and feared leader in her society. She is a jurist with her own school of thought, a scholar, and a mystic of immense power. Her authority is absolute, and her home is a temple dedicated to her specific theology.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": ["Sheikha Qamar", "Qamar al-Zahra"],
+      "tags": ["sheikha", "archive", "canonical", "test"],
+      "searchKeywords": ["qamar", "zahra", "sheikha qamar", "archive"],
+      "metadata": {
+        "importance": "major",
+        "importTest": true,
+        "role": "central figure",
+        "arc": "qamar-main-line"
+      },
+      "relations": [
+        {
+          "type": "AFFILIATED_WITH",
+          "targetId": "inst.sanctum-of-guardian-arts",
+          "notes": "Shared backbone institution."
+        },
+       
+        {
+          "type": "APPEARS_IN",
+          "targetId": "story.the-shams-rise"
+        },
+        {
+          "type": "RELATED_TO",
+          "targetId": "char.ahmed-al-qasr"
+        }
+      ],
+      "media": [
+        {
+          "assetId": "media.qamar-archive.cover-01",
+          "role": "COVER",
+          "alt": "Cover art for Sheikha Qamar al-Zahra archive",
+          "primary": true,
+          "sortOrder": 0
+        }
+      ]
+    },
+    {
+      "id": "char.ahmed-al-qasr",
+      "type": "CHARACTER",
+      "slug": "ahmed-al-qasr",
+      "title": "Ahmed al-Qasr",
+      "summary": "Main protagonist of story 'The 'Shams' Rise' and the central figure of the first story chain.",
+      "body": "ahmed al-Qasr is the main protagonist of the story 'The 'Shams' Rise' and the central figure of the first story chain.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": ["Ahmed","Sifr", "Shams"],
+      "tags": ["main", "witness"],
+      "searchKeywords": ["ahmed", "witness", "Sifr", "Shams"],
+      "metadata": {
+        "importance": "supporting"
+      
+        
+      },
+      "relations": [
+        {
+          "type": "APPEARS_IN",
+          "targetId": "story.the-shams-rise"
+        },
+        {
+          "type": "RELATED_TO",
+          "targetId": "char.sheikha-qamar-al-zahra"
+        }
+       
+      ],
+      "media": []
+    }
+    
+  ],
+  "stories": [
+    {
+      "id": "story.the-shams-rise",
+      "type": "STORY",
+      "slug": "the-shams-rise",
+      "title": "The 'Shams' Rise",
+      "summary": " 'The 'Shams' Rise' is an intense, psychological, and erotic narrative chronicling the complete deconstruction and reconstruction of a young man named ahmed. The story is set in a deeply religious, fantasy matriarchal society where women hold all power and men are subjugated, their masculinity seen as a source of chaotic pride that must be contained.",
+      "body": "The city always smelled of musk and dust\u2014holy, sun-warmed, and stifling. From the moment Iyed stepped outside the family home each morning, barefoot on the cold marble of the inner courtyard, he moved like someone trying not to disturb a greater silence. A silence made not of peace, but of weight. A silence held in the towering presence of women.\r\n\r\nThey were everywhere\u2014veiled, massive, unapproachable.\r\n\r\nEight feet tall. Nine, sometimes. Walking sermons.\r\n\r\nHe lowered his gaze instinctively when they passed, as all men were taught. His eyes clung to the hem of their flowing jilbabs, which swayed like slow waves of divine judgment. Their hands, adorned in thick gold rings and hennaed patterns of scripture, moved with precision and grace. Their footsteps echoed like rulings on marble.\r\n\r\nIyed was twenty-one, though he often felt much younger, like a child trapped in the shadow of something eternal. His limbs were thin, his features gentle, and his frame seemed to shrink further with each passing week. He had once tried to grow a beard\u2014but it came in patchy, soft, more embarrassing than holy. His mother had said nothing, only clipped it off one morning with golden scissors as she whispered a du'a under her breath.\r\n\r\nThat was life, as it was for most men still permitted to live openly: studied, regulated, shamed, and contained.\r\n\r\nHe lived in the women's quarters of his family home\u2014his room a former prayer niche repurposed into something between a servant's chamber and a reliquary. The walls bore verses of the Qur'an, painted by the matriarch of the household herself. He was not allowed to change anything. Even his clothes were chosen for him each morning by his older sister, Samira\u2014robes that covered him completely in soft, feminine colors. His mother said dark shades \"stirred pride,\" and pride was unbecoming of one born male.\r\n\r\nHe was not allowed outside except during study hours, and even then only under escort.\r\n\r\nBut Iyed had grown used to the rhythm of obedience. He didn't rebel\u2014not outwardly. He feared Allah, yes. But he feared her more.\r\n\r\nHis mother, Halima\u2014towering and composed, with sharp eyes that seemed to read his heart like scripture\u2014had once been a scholar of hadith. She had judged men in courts. Written fatwas that made their way to the inner chambers of the Grand Mosque itself. Her voice was gentle, but final. Even when she spoke to him like a boy, even when she called him my little burden, it never sounded cruel. Just... true.\r\n\r\nSometimes, late at night, he would lie awake and listen to her lead tahajjud in the courtyard. Her voice\u2014low, melodic, soaked in centuries of piety\u2014made his breath hitch. He didn't know why. Something about the way she recited made him feel naked inside, hollowed out. As if he were being seen.\r\n\r\nHe had tried to confess that once, to his older cousin, Yara. That her voice made his body ache in strange ways. Yara had only smiled in that mocking way older women did when boys dared to speak.\r\n\r\n\"Oh,\" she'd said, patting his thigh. \"Your soul's waking up. Poor thing. Try not to embarrass yourself.\"\r\n\r\nThat night, Yara had made him kneel beside her for hours as she corrected his tajweed\u2014not with words, but by gently tapping his lips, jaw, and throat. Each mistake was punished not with anger, but with something worse: disappointment. Soft smiles that said, You'll never be worthy of the words you speak.\r\n\r\nHe had cried after. Not because he was hurt\u2014but because her hands had been so gentle.\r\n\r\nIn public, Iyed was invisible.\r\n\r\nWomen walked in flocks, proud and grand, discussing tafsir and politics with each other in low, thunderous voices. They did not notice him. They saw his kind only when they needed something cleaned. Or recited. Or confessed.\r\n\r\nHe spent his days memorizing surahs and fiqh under supervision. Not because anyone believed he'd become a scholar\u2014but because discipline was good for the male mind. A chain wrapped in gold.\r\n\r\nAnd yet, Iyed still dreamed. Quietly, secretly. Not of freedom\u2014he wouldn't know what to do with it\u2014but of purpose. A place. A use. To be looked at and kept. Even broken, if necessary. But seen.\r\n\r\nHe never told anyone that part. He barely told it to himself.\r\n\r\nThat morning, something changed.\r\n\r\nAs he sat in the study hall, legs folded tightly under his robe, he received a summons.\r\n\r\nA folded parchment, perfumed faintly with oud and rose, pressed into his hand by one of the palace's stewards. He dared not look up. The steward said nothing, only bowed and walked away.\r\n\r\nIyed opened it with trembling fingers. The handwriting was precise, elegant, curving like calligraphy on sacred glass.\r\n\r\n\"The time has come to begin your purification.\"\r\nYou are to report to Sheikha Qamar al-Zahra before maghrib.\r\nBring nothing. Your body is her domain now.\r\n\r\nHe read it three times. Then a fourth.\r\n\r\nHis heart pounded\u2014not with excitement. With a shame he could not name.\r\n\r\nSheikha Qamar al-Zahra.\r\n\r\nHe had heard of her. All had. A towering mystic, a jurist with her own school of thought, said to have memorized the Qur'an in seven qira'at by age fifteen. She rarely took students. When she did... they never came back the same.\r\n\r\nIyed's hand shook as he folded the letter.\r\n\r\nHis thighs clenched. He didn't know why.\r\n\r\nBut he would obey.\r\n\r\nOf course he would obey.\r\n\r\n\r\n\r\n\r\nHe didn't tell anyone right away.\r\n\r\nNot out of rebellion. No. There was no rebellion in him, only stillness\u2014like a thread pulled taut. Something inside him told him this was sacred, personal. The parchment weighed heavy in his robe, heat radiating from it as if it carried divine fire. His body reacted before his mind did: breath shallow, thighs pressed tight together, vision a little blurred.\r\n\r\nHe waited until Asr.\r\n\r\nHis mother was seated in the upper courtyard, reciting from her commentary on Sunan an-Nasa'i aloud for the gathered women\u2014sisters, cousins, nieces, even a few visiting scholars. All veiled. All seated like queens in a circle of marble and incense.\r\n\r\nIyed knelt just outside the gathering, waiting to be noticed.\r\n\r\nShe made him wait. She always did.\r\n\r\nIt wasn't cruel. It was... structured. A teaching.\r\n\r\nEventually, without pausing her voice, she raised one hand and gestured him forward. He crawled the rest of the way, eyes down, knees scraping softly on the warm stone. He could feel the other women watching him, judging silently, as he offered the folded parchment like a guilty offering.\r\n\r\nHalima didn't touch it.\r\n\r\nShe simply stared at him with those sharp, ancient eyes of hers. The parchment remained suspended between them like a secret.\r\n\r\n\"Have you read it?\" she asked.\r\n\r\n\"Yes, Ummi,\" he whispered.\r\n\r\n\"Aloud.\"\r\n\r\nHe swallowed. His fingers trembled. But he obeyed.\r\n\r\n\"The time has come to begin your purification,\" he read, voice unsteady.\r\n\"You are to report to Sheikha Qamar al-Zahra before maghrib.\r\nBring nothing. Your body is her domain now.\"\r\n\r\nSilence followed.\r\n\r\nA long, slow, humming silence.\r\n\r\nThen\u2014soft chuckles. From some of the women. Others simply exchanged glances.\r\n\r\nIyed flushed hot, his skin prickling with shame.\r\n\r\nHis mother remained silent for a few more moments, letting the tension coil, then unfurl. At last, she took the parchment between two fingers and folded it once more.\r\n\r\n\"So,\" she murmured, almost tenderly. \"They've summoned our little blemish.\"\r\n\r\nA few titters followed. Yara, reclining beside her, leaned back on her elbow and grinned.\r\n\r\n\"Took them long enough.\"\r\n\r\nIyed bowed his head lower. His eyes stung. But he stayed silent.\r\n\r\nHis mother rose\u2014tall, graceful, her outer cloak fluttering in the warm breeze like the wing of an angelic creature.\r\n\r\n\"Stand, Iyed.\"\r\n\r\nHe obeyed.\r\n\r\nShe circled him slowly, fingers grazing his shoulder, his hip, his cheek. Not with affection, but with the meticulous attention of someone examining an object being returned to the sender.\r\n\r\n\"I thought you might become a poet,\" she said. \"Or a calligrapher. Something ornamental. But perhaps this is better. More direct.\"\r\n\r\nShe turned to the gathering.\r\n\r\n\"Prepare him.\"\r\n\r\nThe rituals began at once.\r\n\r\nHe was bathed in rosewater and black seed oil by his sisters. Not washed\u2014bathed\u2014like a corpse being readied for burial. They spoke no words. They covered his eyes with a soft cloth and cleaned every part of him slowly, rhythmically, like a form of dhikr. He had to bite his lip to keep from weeping\u2014not out of fear, but because their touch was so... deliberate.\r\n\r\nThey dried him with silks and dressed him in a flowing white robe. No underclothes. No belt. Just a loose veil over his head\u2014not like a woman's hijab, but a servant's\u2014marking him as one about to enter sacred service.\r\n\r\nYara applied kohl to his eyes.\r\n\r\n\"You want her to see your sincerity,\" she whispered. \"Even if it's painted on.\"\r\n\r\nHis aunt Zaynab brought out a thin golden anklet\u2014something from their grandmother's time\u2014and fastened it around his left ankle.\r\n\r\n\"Tradition,\" she said. \"Don't ask questions.\"\r\n\r\nHe didn't.\r\n\r\nHe wasn't allowed to eat. His stomach grumbled quietly. But this, too, was part of the preparation.\r\n\r\nBy sunset, he was ready.\r\n\r\nKneeling by the courtyard gate, hands on his thighs, he stared at the ground as his family gathered around. No goodbyes. No hugs. Just presence. Observation.\r\n\r\nA carriage would come for him. Driven by one of Sheikha Qamar's women\u2014he would not see her until the house. He would not speak until spoken to. He would not pray unless commanded. He belonged to the silence now.\r\n\r\nHis mother stepped forward one last time. She bent slightly\u2014not to kiss him, no. But to whisper something:\r\n\r\n\"You are nothing, Iyed. And nothing is holy when offered to the right hands.\"\r\n\r\nA tear slid down his cheek.\r\n\r\nHe didn't know if it was grief, fear, or relief.\r\n\r\nThe gates opened.\r\n\r\nThe carriage waited\u2014shrouded in soft black veils, drawn by silent beasts whose hooves made no sound.\r\n\r\nIyed rose.\r\n\r\nAnd stepped inside.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": ["The 'Shams' Rise", "Shams Rise"],
+      "tags": ["story", "arc", "preview", "canonical"],
+      "searchKeywords": ["unwritten gate", "qamar", "preview chapter"],
+      "metadata": {
+        "sequence": 1,
+        "previewType": "chapter-preview",
+        "externalLinks": {
+          "wattpad": "https://www.wattpad.com/story/400162279-the-shams-rise",
+          "ao3": "https://archiveofourown.org/works/75090041/chapters/196219446"
+        },
+        "importTest": true
+      },
+      "relations": [
+        {
+          "type": "RELATED_TO",
+          "targetId": "char.sheikha-qamar-al-zahra"
+        },
+        {
+          "type": "RELATED_TO",
+          "targetId": "char.ahmed-al-qasr"
+        },
+        {
+          "type": "LOCATED_IN",
+          "targetId": "inst.sanctum-of-guardian-arts"
+        }
+      ],
+      "media": []
+    }
+  ],
+  
+  "media": [
+    {
+      "id": "media.qamar-archive.cover-01",
+      "slug": "qamar-archive-cover-01",
+      "type": "IMAGE",
+      "title": "Qamar Archive Cover",
+      "summary": "A shared cover image for the multi-arc archive package.",
+      "src": "/media/qamar/archive-cover-01.jpg",
+      "alt": "Cover image for the Qamar multi-arc archive",
+      "mimeType": "image/jpeg",
+      "width": 1600,
+      "height": 900,
+      "credit": "test",
+      "tags": ["cover", "archive", "story-art"],
+      "metadata": {
+        "usage": "archive cover ",
+        "importTest": true
+      }
+    }
+  ],
+  "metadata": {
+    "importPurpose": "first canon package import",
+    "canonical": true
+}
+}

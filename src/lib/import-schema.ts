@@ -62,6 +62,18 @@ export const MediaRoleSchema = z.enum([
 
 const MetadataSchema = z.record(z.string(), z.unknown()).optional();
 
+function addDuplicateIssue(
+  ctx: z.RefinementCtx,
+  path: (string | number)[],
+  message: string
+) {
+  ctx.addIssue({
+    code: z.ZodIssueCode.custom,
+    path,
+    message,
+  });
+}
+
 const RelationSchema = z.object({
   type: RelationshipTypeSchema,
   targetId: z.string().min(1),
@@ -133,18 +145,86 @@ export const MediaAssetSchema = z.object({
   metadata: MetadataSchema,
 });
 
-export const UniversePackageSchema = z.object({
-  packageId: z.string().min(1),
-  version: z.string().min(1),
-  title: z.string().min(1),
-  description: z.string().optional(),
-  source: z.string().optional(),
-  characters: z.array(CharacterSchema).default([]),
-  stories: z.array(StorySchema).default([]),
-  lore: z.array(LoreSchema).default([]),
-  timeline: z.array(TimelineEventSchema).default([]),
-  media: z.array(MediaAssetSchema).default([]),
-  metadata: MetadataSchema,
-});
+export const UniversePackageSchema = z
+  .object({
+    packageId: z.string().min(1),
+    version: z.string().min(1),
+    title: z.string().min(1),
+    description: z.string().optional(),
+    source: z.string().optional(),
+    characters: z.array(CharacterSchema).default([]),
+    stories: z.array(StorySchema).default([]),
+    lore: z.array(LoreSchema).default([]),
+    timeline: z.array(TimelineEventSchema).default([]),
+    media: z.array(MediaAssetSchema).default([]),
+    metadata: MetadataSchema,
+  })
+  .superRefine((pkg, ctx) => {
+    const entityCollections = [
+      { key: "characters" as const, items: pkg.characters },
+      { key: "stories" as const, items: pkg.stories },
+      { key: "lore" as const, items: pkg.lore },
+      { key: "timeline" as const, items: pkg.timeline },
+    ];
+
+    const entityIdOwners = new Map<string, string>();
+    const entitySlugOwners = new Map<string, string>();
+    const mediaIdOwners = new Map<string, string>();
+    const mediaSlugOwners = new Map<string, string>();
+
+    for (const collection of entityCollections) {
+      collection.items.forEach((item, index) => {
+        const entityLabel = `${item.type} "${item.title}"`;
+        const existingIdOwner = entityIdOwners.get(item.id);
+        const existingSlugOwner = entitySlugOwners.get(item.slug);
+
+        if (existingIdOwner) {
+          addDuplicateIssue(
+            ctx,
+            [collection.key, index, "id"],
+            `Duplicate entity id "${item.id}" is used by both ${existingIdOwner} and ${entityLabel}.`
+          );
+        } else {
+          entityIdOwners.set(item.id, entityLabel);
+        }
+
+        if (existingSlugOwner) {
+          addDuplicateIssue(
+            ctx,
+            [collection.key, index, "slug"],
+            `Duplicate entity slug "${item.slug}" is used by both ${existingSlugOwner} and ${entityLabel}. Entity slugs must be globally unique across characters, stories, lore, and timeline items.`
+          );
+        } else {
+          entitySlugOwners.set(item.slug, entityLabel);
+        }
+      });
+    }
+
+    pkg.media.forEach((item, index) => {
+      const mediaLabel = `media "${item.title}"`;
+      const existingIdOwner = mediaIdOwners.get(item.id);
+      const existingSlugOwner = mediaSlugOwners.get(item.slug);
+
+      if (existingIdOwner) {
+        addDuplicateIssue(
+          ctx,
+          ["media", index, "id"],
+          `Duplicate media id "${item.id}" is used by both ${existingIdOwner} and ${mediaLabel}.`
+        );
+      } else {
+        mediaIdOwners.set(item.id, mediaLabel);
+      }
+
+      if (existingSlugOwner) {
+        addDuplicateIssue(
+          ctx,
+          ["media", index, "slug"],
+          `Duplicate media slug "${item.slug}" is used by both ${existingSlugOwner} and ${mediaLabel}.`
+        );
+      } else {
+        mediaSlugOwners.set(item.slug, mediaLabel);
+      }
+    });
+  });
 
 export type UniversePackage = z.infer<typeof UniversePackageSchema>;

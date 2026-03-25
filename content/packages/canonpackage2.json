@@ -1,0 +1,139 @@
+{
+  "packageId": "pkg.canon-package-2",
+  "version": "1.0.0",
+  "title": "Canon package 2",
+  "description": "the actual second canon package",
+  "source": "manual package",
+  "characters": [
+    {
+      "id": "char.umm-yusra",
+      "type": "CHARACTER",
+      "slug": "umm-yusra-character",
+      "title": "Umm Yusra",
+      "summary": "A central character and a key figure in the story 'Umm Yusra'.",
+      "body": "Umm Yusra is the antagonist, the love interest, and the deity of the story, all in one. She is an absolute force who orchestrates Ziyad's transformation with terrifying precision.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": ["Umm Yusra", "Yusra"],
+      "tags": ["elder", "wise", "justice"],
+      "searchKeywords": ["yusra", "umm yusra", "elder", "wise woman"],
+      "metadata": {
+        "importance": "major",
+        "importTest": true,
+        "role": "central figure"
+      },
+      "relations": [
+        
+       
+        {
+          "type": "APPEARS_IN",
+          "targetId": "story.umm-yusra"
+        },
+        {
+          "type": "RELATED_TO",
+          "targetId": "char.ziyad-al-bani"
+        }
+      ],
+      "media": [
+        {
+          "assetId": "media.yusra-archive.cover-01",
+          "role": "COVER",
+          "alt": "Cover art for Umm Yusra",
+          "primary": true,
+          "sortOrder": 0
+        }
+      ]
+    },
+    {
+      "id": "char.ziyad-al-bani",       
+      "type": "CHARACTER",
+      "slug": "ziyad-al-bani",
+      "title": "Ziyad al-Bani",
+      "summary": "Main protagonist of story 'Umm Yusra' and the central figure of the second story chain.",
+      "body": "Ziyad al-Bani is the main protagonist of the story 'Umm Yusra' and the central figure of the second story chain.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": ["Ziyad","husband","Umm Yusra"],
+      "tags": ["main", "witness"],
+      "searchKeywords": ["ziyad", "witness", "Umm Yusra", "protagonist"],
+      "metadata": {
+        "importance": "supporting"
+      
+        
+      },
+      "relations": [
+        {
+          "type": "APPEARS_IN",
+          "targetId": "story.umm-yusra"
+        },
+        {
+          "type": "RELATED_TO",
+          "targetId": "char.umm-yusra"
+        }
+       
+      ],
+      "media": []
+    }
+    
+  ],
+  "stories": [
+    {
+      "id": "story.umm-yusra",
+      "type": "STORY",
+      "slug": "umm-yusra-story",
+      "title": "Umm Yusra",
+      "summary": " This story is a piece of erotic fiction with strong themes of BDSM (Dominance and Submission), psychological transformation, and spiritual re-engineering. It tells the story of Ziyad, a timid young man in a speculative, gender-inverted matriarchal society, who is chosen by the powerful, enigmatic, and god-like figure, Umm Yusra.",
+      "body": "Chapter 1: The Weight of Dust and Duty\r\nChapter Text\r\nIyed woke up to the sound of the morning call to prayer echoing through the old clay walls of his family\u2019s narrow apartment. The sound wasn\u2019t just spiritual\u2014it was disciplinary. In this society, Fajr wasn\u2019t a blessing; it was an obligation soaked in eyes that watched, judged, and measured every move.\r\n\r\nHis father\u2019s voice soon followed, harsh and sharp like gravel under a boot:\r\n\r\n\u201CYou\u2019re not praying? Is that what you\u2019re becoming? A mutiny of flesh?\u201D\r\n\r\nIyed scrambled out of his thin mattress on the floor, wiping sleep from his face. He was twenty-one, but he felt twelve under his father\u2019s gaze. The walls were close and uneven, filled with old religious calligraphy and women\u2019s voices beyond thin walls\u2014his mother, his sisters, his aunts\u2014all of them taller, stronger, and louder than him. In this matriarchal society, a man wasn\u2019t head of the house. A man was the house cat.\r\n\r\nMen were not born for leadership, but for obedience. This had been drilled into him since he could walk. Women, especially older women, were the judges, the soldiers, the clerics, the business owners. Men were trained to serve, to remain modest, to be meek and God-fearing. It wasn\u2019t enough to be pious\u2014you had to be pliable.\r\n\r\nAt 5\u20198\u201D, Iyed was an average man. But in a world where the average woman towered at 7 feet, he was small, feminine-looking, and delicate in build. His hands were soft. His arms were thin. His eyes were always lowered. And his voice rarely rose above a whisper.\r\n\r\nThe Streets Outside\r\n\r\nAfter prayer and a cold breakfast his mother barely acknowledged, Iyed stepped out into the neighborhood, a place where everything was built for women. Doors were tall. Benches were wide. Adornments and surveillance cameras watched for male disobedience. Giant posters of niqab-clad women in positions of power decorated every wall:\r\n\r\n\u201CTHE MOTHER KNOWS.\u201D\r\n\u201CTHE UTERUS COMMANDS.\u201D\r\n\u201CA WOMAN IS CLOSER TO GOD.\u201D\r\n\r\nHe passed by the community masjid\u2014not allowed inside except during specific hours for male supplication. Outside, massive women, cloaked in niqabs and flowing garments, towered over the men walking two steps behind them. Most of them carried staffs or tasbih beads the size of his wrists. Even their perfume was an oppressive fog\u2014sweet, heady, almost drugging.\r\n\r\nSome of the women looked down at him as he passed, eyes dark and impassive behind the veil. One murmured:\r\n\r\n\u201CHow sad. That one looks so\u2026 hollow. As if his own masculinity abandoned him.\u201D\r\n\r\nHome Life\r\n\r\nIyed had one brother\u2014now gone, taken into the Domestic Training Corps, a euphemism for what was essentially spiritual re-education for men who refused to submit to marriage arrangements.\r\n\r\nHis mother, Sabira, was a towering woman, a retired state judge. Cold, calculating, devout. She didn\u2019t hit him\u2014but her silence was worse than violence.\r\n\r\nHis father, Khalid, was\u2026 hollow. A shell of a man who simply recited Qur\u2019an and served tea. It wasn\u2019t shameful\u2014serving was virtuous. But there was no trace of fire left in the old man.\r\n\r\n\u201CDon\u2019t make trouble, Iyed,\u201D his father once said softly.\r\n\u201CIf a woman chooses you, say yes. Even if it\u2019s a punishment.\u201D\r\n\r\nIyed\u2019s Inner World\r\n\r\nAt night, Iyed retreated into his mind. He had no friends. No freedom. Just forbidden thoughts.\r\n\r\nSometimes he dreamed of being stepped on\u2014not in pain, but in awe. Of being held down by a niqabi woman who smelled of jasmine and power.\r\nHe dreamed of veiled giants smothering him, not violently\u2014but in a kind of holy ecstasy.\r\nHe hated these dreams.\r\n\r\nEach morning, he repented.\r\n\r\nEach night, they came again.\r\n\r\nThe Letter\r\n\r\nOne day, a letter arrived. His mother held it in her massive, ringed hand, her eyes unreadable.\r\n\r\n\u201CYou\u2019ve been chosen.\u201D\r\n\r\nHe stared at her.\r\n\r\n\u201CBy who\u2026?\u201D\r\n\r\n\u201CUmm Yusra. You\u2019ve heard of her. She\u2019s a scholar. A mystic. A pillar of the masjid. And she has asked for you.\u201D\r\n\r\nThe room tilted. His stomach turned cold.\r\n\r\n\u201CBut I\u2014why me? I\u2019m nothing.\u201D\r\n\r\n\u201CExactly,\u201D his father whispered.\r\n\r\nHis mother continued, \"She is **forty. Unmarried. Towering. Wealthy. Pious. Beautiful. Dominant. And she has selected you. You will accept this as qadr. God\u2019s will.\"\r\n\r\n\u201CB-but\u2026 she\u2019s\u2026 she\u2019s like a queen.\u201D\r\n\r\n\u201CAnd you are clay. Be shaped.\u201D",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": ["Umm Yusra"],
+      "tags": ["story", "arc", "preview", "canonical"],
+      "searchKeywords": ["umm yusra", "yusra", "preview chapter","ziyad"],
+      "metadata": {
+        "sequence": 1,
+        "previewType": "chapter-preview",
+        "externalLinks": {
+          "wattpad": "https://www.wattpad.com/story/399886830-umm-yusra",
+          "ao3": "https://archiveofourown.org/works/74091021/chapters/193304691"
+        },
+        "importTest": true
+      },
+      "relations": [
+        {
+          "type": "RELATED_TO",
+          "targetId": "char.umm-yusra"
+        },
+        {
+          "type": "RELATED_TO",
+          "targetId": "char.ziyad-al-bani"
+        }
+        
+      ],
+      "media": []
+    }
+  ],
+  
+  "media": [
+    {
+      "id": "media.umm-yusra-archive.cover-01",
+      "slug": "umm-yusra-archive-cover-01",
+      "type": "IMAGE",
+      "title": "Umm Yusra",
+      "summary": "A shared cover image for the multi-arc archive package.",
+      "src": "/media/yusra/archive-cover-01.jpg",
+      "alt": "Cover image for the Umm Yusra archive",
+      "mimeType": "image/jpeg",
+      "width": 1600,
+      "height": 900,
+      "tags": ["cover", "archive", "story-art"],
+      "metadata": {
+        "usage": "archive cover ",
+        "importTest": true
+      }
+    }
+  ],
+  "metadata": {
+    "importPurpose": "canon package import",
+    "canonical": true
+}
+}

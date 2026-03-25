@@ -1,0 +1,137 @@
+{
+  "packageId": "pkg.canon-package-4",
+  "version": "1.0.0",
+  "title": "Canon package 4",
+  "description": "the actual fourth canon package",
+  "source": "manual package",
+  "characters": [
+    {
+      "id": "char.sheikha-fatina-al-zalzala",
+      "type": "CHARACTER",
+      "slug": "sheikha-fatina-al-zalzala",
+      "title": "Sheikha Fatina al-Zalzala",
+      "summary": "Fatina is the master, the architect of Taha's transformation. Her name, \"al-Zalzala,\" means \"the one who quakes,\" referring to her ability to shake the soul.",
+      "body": "Fatina's motivation is not simple sadism. It is a deeply held theological and philosophical project. She believes that true holiness for men lies not in strength or virility ('hardness') but in absolute submission and the erasure of the ego ('softness'). Her goal is to take Taha, a 'failed' man, and transform him into the perfect sacred object—a living proof of her doctrine. She is a sculptor of souls, and her cruelty is a precise, necessary tool for her work.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [" Sheikha Fatina al-Zalzala", "Fatina", "Zalzala", "Sheikha"],
+      "tags": ["cruel","powerful","manipulative"],
+      "searchKeywords": ["fatina al-zalzala", "fatina", "zalzala", "sheikha"],
+      "metadata": {
+        "importance": "major",
+        "importTest": true,
+        "role": "central figure"
+      },
+      "relations": [
+        
+        {
+          "type": "APPEARS_IN",
+          "targetId": "story.the-dead-trace"
+        },
+        {
+          "type": "RELATED_TO",
+          "targetId": "char.taha"
+        }
+      ],
+      "media": [
+        {
+          "assetId": "media.sheikha-fatina-al-zalzala-archive.cover-01",
+          "role": "COVER",
+          "alt": "Cover art for Sheikha Fatina al-Zalzala",
+          "primary": true,
+          "sortOrder": 0
+        }
+      ]
+    },
+    {
+      "id": "char.taha",       
+      "type": "CHARACTER",
+      "slug": "taha",
+      "title": "Taha",
+      "summary": "Main protagonist of story 'The Dead Trace' and the central figure of the fourth story chain.",
+      "body": "Taha, a young man in a rigid, matriarchal theocracy where a man's spiritual worth is physically manifested by his ability to get an erection ('rise') in the presence of female authority. Iyed suffers from erectile dysfunction, a condition known as 'Suqoot al-Qamah' (The Falling of the Minaret), which is considered a profound spiritual and moral failure.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": ["Taha","Trace","Fatina"],
+      "tags": ["main", "witness"],
+      "searchKeywords": ["Taha","dead","trace", "witness", "fatina", "protagonist"],
+      "metadata": {
+        "importance": "supporting"
+      
+        
+      },
+      "relations": [
+        {
+          "type": "APPEARS_IN",
+          "targetId": "story.the-dead-trace"
+        },
+        {
+          "type": "RELATED_TO",
+          "targetId": "char.sheikha-fatina-al-zalzala"
+        }
+       
+      ],
+      "media": []
+    }
+    
+  ],
+  "stories": [
+    {
+      "id": "story.the-dead-trace",
+      "type": "STORY",
+      "slug": "the-dead-trace",
+      "title": "The Dead Trace",
+      "summary": " This is a dense, symbolic, and intense narrative titled 'The Dead Trace.' It is a work of dark erotic fiction that uses the framework of religious ritual and BDSM power dynamics to explore themes of shame, identity, gender, and spiritual transformation.",
+      "body":"The call to Fajr echoed through the whitewashed streets of al-Ruhayya just before the horizon bled blue. The air still held the velvet of night, cool and trembling with incense, as the voice of the muezzinah\u2014deep, slow, and sonorous\u2014rolled through the open courtyards. Not a man's voice. That was forbidden now. Only women could give the call to prayer, for only women were truly upright in this world.\r\n\r\nInside a modest home tucked beneath the minarets, Iyed knelt motionless, eyes half-open, body wrapped in sleep and a shame that did not lift with dawn. The room was bare, save for a wooden shelf of books on fiqh, a worn copy of the Qur'an bound in crimson leather, and the long mirror where he refused to look.\r\n\r\nHe had not prayed Fajr standing for months.\r\n\r\nNot since the failure began.\r\n\r\nHis mother's voice rang from the doorway, sharp and elegant, like a sword unsheathed for battle.\r\n\r\n\"Get up. Clean yourself. You will not shame this house by sleeping through Allah's gaze.\"\r\n\r\nIyed nodded silently, but his limbs were leaden. Not from laziness, but from the sick weight of his condition\u2014a word no one used aloud. A word that was more curse than illness. Erectile dysfunction had no medical name in this society. Here, they called it \"Suqoot al-Qamah\"\u2014The Falling of the Minaret.\r\n\r\nIt was not the body that failed, they said. It was the soul.\r\n\r\nHe washed in silence. Cold water over pale skin. He dried himself with rough cotton, aware of the stillness between his thighs. That stillness\u2014that flaccid softness\u2014was his greatest humiliation. A constant betrayal. In his youth, he had prayed for it to rise during the school inspections, during the communal shower rites, when the priestesses tested boys for \"readiness.\"\r\n\r\nIt never did.\r\n\r\nHe was nineteen the first time they stripped him, prayed over him, and stared at his bare cock with religious disappointment.\r\n\r\n\"It lies like a dead thing,\" one of the elder women had said, shaking her head. \"Is he possessed? Is this a punishment?\"\r\n\r\nSince then, he had prayed in secret, terrified to join public sujood. His mother\u2014proud, once a warrior-turned-scholar\u2014kept his secret hidden, but only barely. The shame cracked her voice when she spoke to him, even in tenderness.\r\n\r\nHis father was gone\u2014disappeared when Iyed was young. Some said he had wandered into the desert to escape the shame of raising a defective son. Others whispered he had been taken by the priestesses to be recycled\u2014his flesh turned into food or leather or fuel, as the old rites permitted.\r\n\r\nIyed did not ask.\r\n\r\nHe dressed simply. A gray tunic that fell past his knees. Loose white trousers, tightened at the waist with a cord that once belonged to his father's prayer robe. No belt. No adornment. He had never earned the right to wear gold.\r\n\r\nOutside, the women passed like moving statues\u2014towering, wrapped in silks and scholarly robes, the youngest among them already taller than any man could hope to be. Their height was a sign of divine favor, their breasts and hips symbols of sacred fertility. And yet their strength\u2014mental, physical, theological\u2014was the real terror.\r\n\r\nIyed looked down as they passed, eyes never daring to rise. Some ignored him. Others paused, stared at him with cold curiosity, like inspecting a useless object.\r\n\r\nOne said softly, with a smirk:\r\n\r\n\"There goes the limp one.\"\r\n\r\nHe kept walking.\r\n\r\nAt the madrasa, he sat alone. The girls\u2014more like priestesses-in-training than students\u2014dominated the circle of learning. They recited Qur'an in voices like honey dipped in iron. Iyed's own voice, thin and shy, cracked whenever he was called upon. When he blushed, they laughed.\r\n\r\nHe no longer touched the Qur'an directly. Not since the incident.\r\n\r\nThat day, he had been asked to recite an ayah about qamah\u2014\"the standing.\" A metaphor, in the scripture, for moral uprightness.\r\nHe had stuttered.\r\nThe teacher, a tall woman with gold-rimmed glasses and a voice like thunder, had leaned down and whispered:\r\n\r\n\"Why does your voice falter at that word? Is it because your flesh knows it lies?\"\r\n\r\nSince then, he recited only from memory.\r\n\r\nLater, in the private courtyard where men were allowed to rest, Iyed sat by a fountain. The water, clear and humming, did not calm him. Across the courtyard, another boy was being led away by two older priestesses\u2014his hands bound gently, his head bowed.\r\n\r\n\"Another failure,\" someone whispered.\r\n\"They'll send him to correction. Or rebirth.\"\r\n\r\nIyed trembled.\r\n\r\nHe knew what that meant.\r\n\r\nRebirth. A ritual conducted only in secret. Some said the limp were turned into women through fasting, pain, and spiritual possession. Others claimed worse\u2014that they were used, reshaped, and never returned. That they became vessels. Sacred objects.\r\n\r\nBut what if that was the only way?\r\n\r\nWhat if the path to holiness was through humiliation?\r\n\r\nIyed pressed a hand between his legs, feeling the softness\u2014like a secret that refused to die. He imagined what the priestesses would do if they found out. If his mother reported him.\r\n\r\nAnd something in him... quivered.\r\n\r\nNot his flesh. But something else. A tension. A longing. A terrible hunger for surrender.\r\n\r\nAnd then the thought arrived. Slow. Like the dawn.\r\nUnspoken. Sacred.\r\n\r\nMaybe it is not meant to rise.\r\n\r\nMaybe it is meant to kneel.",
+      "visibility": "PUBLIC",
+      "aliases": [" Sheikha Fatina al-Zalzala","dead","trace","Taha"],
+      "tags": ["story", "arc", "preview", "canonical"],
+      "searchKeywords": ["sheikha", "fatina-al-zalzala", "preview chapter","taha", "trace","dysfunction"],
+      "metadata": {
+        "sequence": 1,
+        "previewType": "chapter-preview",
+        "externalLinks": {
+          "wattpad": "https://www.wattpad.com/story/400918708-the-dead-trace"
+          
+        },
+        "importTest": true
+      },
+      "relations": [
+        {
+          "type": "RELATED_TO",
+          "targetId": "char.sheikha-fatina-al-zalzala"
+        },
+        {
+          "type": "RELATED_TO",
+          "targetId": "char.taha"
+        }
+        
+      ],
+      "media": []
+    }
+  ],
+  
+  "media": [
+    {
+      "id": "media.sheikha-fatina-al-zalzala-archive.cover-01",
+      "slug": "sheikha-fatina-al-zalzala-archive-cover-01",
+      "type": "IMAGE",
+      "title": "Sheikha Fatina al-Zalzala",
+      "summary": "A shared cover image for the multi-arc archive package.",
+      "src": "/media/fatina-al-zalzala/archive-cover-01.jpg",
+      "alt": "Cover image for the Sheikha Fatina al-Zalzala archive",
+      "mimeType": "image/jpeg",
+      "width": 1600,
+      "height": 900,
+      "tags": ["cover", "archive", "story-art"],
+      "metadata": {
+        "usage": "archive cover ",
+        "importTest": true
+      }
+    }
+  ],
+  "metadata": {
+    "importPurpose": "canon package import",
+    "canonical": true
+}
+}

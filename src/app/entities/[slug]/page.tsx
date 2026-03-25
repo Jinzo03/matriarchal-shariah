@@ -8,6 +8,7 @@ import {
   t,
 } from "@/lib/locale";
 import { getRequestLocale } from "@/lib/locale.server";
+import { getRelationshipLabel } from "@/lib/relationships";
 import { PageHeader } from "@/components/page-header";
 import { Reveal } from "@/components/reveal";
 
@@ -349,7 +350,9 @@ export default async function EntityPage({ params }: PageProps) {
                       className="block rounded-xl border border-border px-4 py-3 transition hover:bg-accent"
                     >
                       <p className="font-medium">{relationship.sourceEntity.title}</p>
-                      <p className="text-sm text-muted-foreground">{relationship.type}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {getRelationshipLabel(relationship.type, locale, "incoming")}
+                      </p>
                     </Link>
                   ))
                 ) : (
@@ -375,7 +378,9 @@ export default async function EntityPage({ params }: PageProps) {
                       className="block rounded-xl border border-border px-4 py-3 transition hover:bg-accent"
                     >
                       <p className="font-medium">{relationship.targetEntity.title}</p>
-                      <p className="text-sm text-muted-foreground">{relationship.type}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {getRelationshipLabel(relationship.type, locale, "outgoing")}
+                      </p>
                     </Link>
                   ))
                 ) : (

@@ -1,0 +1,137 @@
+{
+  "packageId": "pkg.canon-package-3",
+  "version": "1.0.0",
+  "title": "Canon package 3",
+  "description": "the actual third canon package",
+  "source": "manual package",
+  "characters": [
+    {
+      "id": "char.sheikha-rahmatuljabbar",
+      "type": "CHARACTER",
+      "slug": "sheikha-rahmatuljabbar",
+      "title": "Sheikha Rahmatu’l-Jabbar",
+      "summary": "The Sheikha is the enigmatic and all-powerful architect of the protagonist's transformation. Her name, translating to 'Mercy of the Compeller,' perfectly incapsulates her paradoxical nature.",
+      "body": "Sheikha Rahmatu’l-Jabbar is the antagonist, the love interest, and the deity of the story, all in one. She is an absolute force who orchestrates Zouhair's transformation with terrifying precision.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [" Sheikha Rahmatu’l-Jabbar", "Jabbar", "Rahma", "Sheikha"],
+      "tags": ["elder", "wise", "justice"],
+      "searchKeywords": ["rahmatuljabbar", "jabbar", "sheikha"],
+      "metadata": {
+        "importance": "major",
+        "importTest": true,
+        "role": "central figure"
+      },
+      "relations": [
+        
+        {
+          "type": "APPEARS_IN",
+          "targetId": "story.verse-made-flesh"
+        },
+        {
+          "type": "RELATED_TO",
+          "targetId": "char.zouhair"
+        }
+      ],
+      "media": [
+        {
+          "assetId": "media.sheikha-rahmatuljabbar-archive.cover-01",
+          "role": "COVER",
+          "alt": "Cover art for Sheikha Rahmatu’l-Jabbar",
+          "primary": true,
+          "sortOrder": 0
+        }
+      ]
+    },
+    {
+      "id": "char.zouhair",       
+      "type": "CHARACTER",
+      "slug": "zouhair",
+      "title": "Zouhair",
+      "summary": "Main protagonist of story 'Verse Made Flesh' and the central figure of the third story chain.",
+      "body": "Zouhair, who is later renamed Safiyya, is the vessel through which the story's themes of shame, submission, and transformation are explored.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": ["Zouhair","Safiyya","Rahmatu’l-Jabbar","feminin"],
+      "tags": ["main", "witness"],
+      "searchKeywords": ["Zouhar","Safiyya", "witness", "rahmatuljabbar", "protagonist"],
+      "metadata": {
+        "importance": "supporting"
+      
+        
+      },
+      "relations": [
+        {
+          "type": "APPEARS_IN",
+          "targetId": "story.verse-made-flesh"
+        },
+        {
+          "type": "RELATED_TO",
+          "targetId": "char.sheikha-rahmatuljabbar"
+        }
+       
+      ],
+      "media": []
+    }
+    
+  ],
+  "stories": [
+    {
+      "id": "story.verse-made-flesh",
+      "type": "STORY",
+      "slug": "verse-made-flesh",
+      "title": "Verse Made Flesh",
+      "summary": "This is a profoundly intense and complex piece of narrative fiction. It tells the story of a young man's complete psychological, physical, and spiritual transformation under the tutelage of a powerful, enigmatic spiritual matriarch. At its core, the story is about the deconstruction of one identity born of shame and the construction of a new one built on submission and a re-contextualized form of holiness.",
+      "body": "The muezzin's call hung in the summer air like incense too thick to breathe.\r\nIt was not yet Maghrib, but the sky outside the cracked apartment window had already bruised with gold and indigo, and the scent of frying onions drifted lazily through the corridor of the building\u2014third floor, flat 3B, where Iyed lived in a silence that pressed on his ribs like guilt.\r\n\r\nHe was twenty-one, but felt younger.\r\nOr older.\r\nIt depended on the moment.\r\n\r\nIn the presence of his father's stern voice or his mother's sighs, he became a child again\u2014a creature of downcast eyes and fidgeting fingers. But alone in his room, door locked, trousers low, he became something else. Something disgusting. Something shameful.\r\n\r\nThe only mirror he had was cracked in three places\u2014perhaps mercifully. It never gave him a whole reflection, only shards of himself. His face. His too-thin chest. His hands. That thing between his legs.\r\n\r\nThat cursed thing.\r\n\r\nHe had named it once.\r\nJust once, in secret.\r\nA name stolen from a poet's verse, whispered through trembling lips. But even that small act had made him shudder with guilt. The kind that curdled the stomach. The kind that smelled like Hell.\r\n\r\nHe tried to pray it away.\r\nHe tried to fast.\r\nHe tried to read the Kitab at-Tawbah, the Book of Repentance, every night.\r\n\r\nBut sometimes... when the house was asleep... and the fan turned slow and lazy in the ceiling...\r\nHe touched himself.\r\n\r\nJust to feel something.\r\nJust to remind himself he was alive. That he wasn't only the sum of disappointments that filled his parents' silences.\r\n\r\nThat night, he had been bold.\r\n\r\nReckless, even.\r\n\r\nHe had slid his fingers beneath the waistband of his thin cotton pants, imagining softness\u2014not his own, but the kind he had only glimpsed in haram thoughts: the shape of an ankle peeking from under a jilbab, the curve of a wrist adjusting a niqab, the shadow between thighs that only angels should see.\r\n\r\nHis breath had come fast.\r\nHis eyes had shut.\r\nHis sin had risen in his hand, needy, trembling.\r\n\r\nAnd that was when the door opened.\r\n\r\nNot slammed.\r\n\r\nNot shouted.\r\n\r\nJust opened.\r\n\r\nAnd in the slivered silence that followed, as the light from the hallway pooled across his shameful body like divine judgment, his mother stood at the threshold.\r\n\r\nShe didn't scream.\r\n\r\nShe didn't curse.\r\n\r\nShe didn't even blink.\r\n\r\nShe just looked at him the way she looked at mold in the bathroom. With tired disappointment.\r\nWith cold, feminine contempt.\r\nLike something unworthy of her time, but in need of cleaning.\r\n\r\nThen she called for his father.\r\nThen the sisters gathered.\r\nThen came the silence\u2014that kind. Not the one of peace, but of judgment left to simmer.\r\n\r\nThe Gathering\r\n\r\nThe next morning, after fajr, Iyed sat on his knees in the salon as the family circle tightened.\r\nHe wore a long white undershirt that hung too big over his frame. He wasn't allowed to meet their eyes. His sisters whispered. His mother sipped tea slowly. His father opened the Qur'an, but did not read.\r\n\r\nThen came the sentence.\r\n\r\n\"She will take him,\" his mother said. \"She knows how to deal with this filth.\"\r\n\r\n\"She?\" Iyed had whispered, but it wasn't a question. It was fear.\r\n\r\nThey meant her.\r\nThe woman spoken of only in low voices at weddings, in jokes with too much truth.\r\n\r\nSheikha Rahmatu'l-Jabbar.\r\n\r\nThe one who \"purified\" men like him.\r\nThe one who \"saved\" boys with hands that disobeyed.\r\nThe one who turned urge into ash\u2014and ash into prayer.\r\n\r\nIyed's throat went dry. He tried to apologize again, but his father raised a hand.\r\n\r\n\"You will go,\" he said. \"You are too weak to handle your own nafs. She will handle it for you.\"\r\n\r\n\"But\u2014\"\r\n\r\nHis mother stood.\r\n\r\n\"She does not take boys. She takes limbs of fire, and teaches them sujood.\"\r\n\r\nThere was no more conversation after that.\r\nOnly the quiet rustle of a bag being packed.\r\nOnly the firm hands of his sisters, helping him into clean clothes, as if dressing a body for burial.\r\n\r\nThe Journey\r\n\r\nThe taxi smelled of sweat and Qur'an radio.\r\nThey rode in silence.\r\nHis mother beside him. He didn't know where they were going\u2014only that it was near the hills, somewhere outside the city. A place where she lived alone, it was said. Among date palms and silence and women's secrets.\r\n\r\nHe felt the urge again\u2014low, coiled, trembling.\r\n\r\nNot sexual.\r\nNot quite.\r\n\r\nFear.\r\n\r\nA fear that tingled beneath the skin. The kind that made your hands shake because your soul knew it was approaching something larger than it could handle. Something ancient. Something divine. Something terrible.\r\n\r\nSheikha Rahmatu'l-Jabbar was not old, they said.\r\n\r\nNor young.\r\n\r\nShe just was\u2014like time itself. A woman who had studied fiqh and tasawwuf and the body as though they were all one Book.\r\n\r\nThey said she once made a grown man sob just by looking at him.\r\n\r\nThey said she sat on boys and did not rise until they wept for Allah.\r\n\r\nThey said she had once tied a boy in sujood for three nights and three days, and when he was untied, he asked to be called slave of Rahma.\r\n\r\nArrival\r\n\r\nThe taxi stopped in front of a sand-colored gate carved with Qur'anic calligraphy.\r\n\"And We created man weak.\"\r\nSurah An-Nisa. Verse 28.\r\n\r\nIyed stared at the words as the iron gates creaked open.\r\nHis mother did not kiss him goodbye.\r\n\r\nShe just pressed a hand to his chest and whispered:\r\n\"Don't lie to her. She already knows.\"\r\n\r\nThen she got back in the taxi.\r\nAnd he was alone.\r\n\r\nThe sun bore down.\r\n\r\nThe gravel crunched.\r\n\r\nAnd the door opened.\r\n\r\nAnd there she stood.\r\n\r\nSheikha Rahmatu'l-Jabbar.\r\n\r\nTall.\r\nVeiled in black that shimmered like silk under light.\r\nEyes kohl-lined, unblinking.\r\n\r\nShe said nothing.\r\nShe just stepped aside and let him enter.\r\nAnd as he crossed the threshold barefoot, he felt the world shift.\r\n\r\nFrom now on, everything would be different.\r\n\r\n",
+      "visibility": "PUBLIC",
+      "aliases": [" Sheikha Rahmatu’l-Jabbar","Safiyya","Zouhair"],
+      "tags": ["story", "arc", "preview", "canonical"],
+      "searchKeywords": ["sheikha", "rahmatuljabbar", "preview chapter","zouhair", "safiyya","feminization"],
+      "metadata": {
+        "sequence": 1,
+        "previewType": "chapter-preview",
+        "externalLinks": {
+          "wattpad": "https://www.wattpad.com/story/400549953-verse-made-flesh"
+          
+        },
+        "importTest": true
+      },
+      "relations": [
+        {
+          "type": "RELATED_TO",
+          "targetId": "char.sheikha-rahmatuljabbar"
+        },
+        {
+          "type": "RELATED_TO",
+          "targetId": "char.zouhair"
+        }
+        
+      ],
+      "media": []
+    }
+  ],
+  
+  "media": [
+    {
+      "id": "media.sheikha-rahmatuljabbar-archive.cover-01",
+      "slug": "sheikha-rahmatuljabbar-archive-cover-01",
+      "type": "IMAGE",
+      "title": "Sheikha Rahmatu’l-Jabbar",
+      "summary": "A shared cover image for the multi-arc archive package.",
+      "src": "/media/rahmatuljabbar/archive-cover-01.jpg",
+      "alt": "Cover image for the Sheikha Rahmatu’l-Jabbar archive",
+      "mimeType": "image/jpeg",
+      "width": 1600,
+      "height": 900,
+      "tags": ["cover", "archive", "story-art"],
+      "metadata": {
+        "usage": "archive cover ",
+        "importTest": true
+      }
+    }
+  ],
+  "metadata": {
+    "importPurpose": "canon package import",
+    "canonical": true
+}
+}
