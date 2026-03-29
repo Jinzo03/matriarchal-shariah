@@ -107,23 +107,29 @@
         }
         
       ],
-      "media": []
+      "media": [
+                {
+                    "assetId": "dead-trace.cover",
+                    "role": "COVER",
+                    "primary": true,
+                    "sortOrder": 0,
+                    "alt": "Cover image for The Dead Trace story"
+                }
+            ]
     }
   ],
   
   "media": [
     {
-      "id": "media.sheikha-fatina-al-zalzala-archive.cover-01",
-      "slug": "sheikha-fatina-al-zalzala-archive-cover-01",
+      "id": "dead-trace.cover",
+      "slug": "dead-trace-cover",
       "type": "IMAGE",
-      "title": "Sheikha Fatina al-Zalzala",
-      "summary": "A shared cover image for the multi-arc archive package.",
-      "src": "/media/fatina-al-zalzala/archive-cover-01.jpg",
-      "alt": "Cover image for the Sheikha Fatina al-Zalzala archive",
-      "mimeType": "image/jpeg",
-      "width": 1600,
-      "height": 900,
-      "tags": ["cover", "archive", "story-art"],
+      "title": "The Dead Trace Cover Image",
+      "summary": null,
+      "src": "/media/fatina/20260327_0011_Alternate Character Scene_remix_01kmp6mmxae9x8gt0rdqpn55j8.png",
+      "alt": "Cover image for The Dead Trace story",
+      "mimeType": "image/png",
+      "tags": ["cover", "story-art"],
       "metadata": {
         "usage": "archive cover ",
         "importTest": true

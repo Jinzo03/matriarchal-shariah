@@ -108,23 +108,27 @@
         }
         
       ],
-      "media": []
+      "media": [{
+                    "assetId": "media.verse-made-flesh.cover",
+                    "role": "COVER",
+                    "primary": true,
+                    "sortOrder": 0,
+                    "alt": "Cover image for Verse Made Flesh story"
+                }]
     }
   ],
   
   "media": [
     {
-      "id": "media.sheikha-rahmatuljabbar-archive.cover-01",
-      "slug": "sheikha-rahmatuljabbar-archive-cover-01",
+      "id": "media.verse-made-flesh.cover",
+      "slug": "verse-made-flesh-cover",
       "type": "IMAGE",
-      "title": "Sheikha Rahmatu’l-Jabbar",
-      "summary": "A shared cover image for the multi-arc archive package.",
-      "src": "/media/rahmatuljabbar/archive-cover-01.jpg",
-      "alt": "Cover image for the Sheikha Rahmatu’l-Jabbar archive",
-      "mimeType": "image/jpeg",
-      "width": 1600,
-      "height": 900,
-      "tags": ["cover", "archive", "story-art"],
+      "title": "Verse Made Flesh Cover Image",
+      "summary": null,
+      "src": "/media/rahma/20260327_0036_Image Generation_remix_01kmp82411f2qs2e24p3ff7rmm.png",
+      "alt": "Cover image for Verse Made Flesh story",
+      "mimeType": "image/png",
+      "tags": ["cover", "story-art"],
       "metadata": {
         "usage": "archive cover ",
         "importTest": true

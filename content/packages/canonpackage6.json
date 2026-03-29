@@ -108,6 +108,44 @@
         }
       ],
       "media": []  
+    },
+    {
+      "id": "char.sheikha-ibtihal-al-fazariyya",
+      "type": "CHARACTER",
+      "slug": "ibtihal-al-fazariyya",
+      "title": "Sheikha Ibtihāl al-Fazāriyya",
+      "summary": "Sheikha Ibtihāl al-Fazāriyya is a fascinating and crucial secondary character in the 'Pact That Unmade The Boundary'. While she isn't a main protagonist, she functions as the primary agent of the theological system, representing the Council's unyielding gaze and its evolving judgment. Her evolution in how she sees the triad is a powerful mirror of the system's own struggle.",
+      "body": "Sheikha Ibtih\u0101l is the perfect representation of the system itself: initially rigid and demanding, but also capable of recognizing authentic spiritual growth. She is not cruel for cruelty's sake; her every action is in service to the \"sacred architecture\" of their theology. Her journey is from a judge of rules to a weigher of truths. While she ultimately presides over Iyed's tragic fate, she does so with a full understanding of the paradox: the triad's spiritual success necessitated its structural collapse. She is the face of a law that is forced to bend, even if it means breaking someone in the process.\r\n\r\nHer Title and Role\r\nTitle: Third Chair of Evaluation and Harmonized Pacts.\r\nFunction: She is the Council Inspector. Her job is to evaluate the integrity and progress of sacred pacts, particularly the rare and volatile \"Three-Bodied Womb.\" She is a diagnostician of sanctity, determining whether a pact is \"inert,\" \"in gestation,\" or has reached \"birth.\"\r\nSymbolism: She embodies the cold, impartial, and brutally honest eye of the law. She is introduced with the scent of \"juniper and rulebooks.\" She is not swayed by emotion; she measures results. She is also called \"the milkless judge\" and \"Slayer of Half-Choices,\" titles that highlight her severity and demand for absolute commitment.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [" Sheikha Ibtihal al-Fazariyya", "Ibtihal", "Fazariyya", "Sheikha"],
+      "tags": ["powerful","firm","sharp","harsh"],
+      "searchKeywords": ["ibtihal al-fazariyya", "ibtihal", "fazariyya", "sheikha","safiyya","mother","three bodied womb","zaynab","ala"],
+      "metadata": {
+        "importance": "major",
+        "importTest": true,
+        "role": "central figure"
+      },
+      "relations": [
+        
+        {
+          "type": "APPEARS_IN",
+          "targetId": "story.the-pact-that-unmade-the-boundary"
+        },
+        {
+          "type": "RELATED_TO",
+          "targetId": "char.ala-ibn-lahm"
+        },
+        {
+          "type": "RELATED_TO",
+          "targetId": "char.sheikha-safiyya-al-tanuriyyah"
+        },
+        {
+          "type": "RELATED_TO",
+          "targetId": "char.sheikha-zaynab-al-ajjala"
+        }
+      ],
+      "media": [] 
     }
     
   ],
@@ -147,7 +185,30 @@
         }
         
       ],
-      "media": []
+      "media": [{
+                    "assetId": "media.the-pact-that-unmade-the-boundary.cover",
+                    "role": "COVER",
+                    "primary": true,
+                    "sortOrder": 0,
+                    "alt": "Cover image for The Pact That Unmade The Boundary story"
+                }]
+    }
+  ],
+  "media": [
+    {
+      "id": "media.the-pact-that-unmade-the-boundary.cover",
+      "slug": "the-pact-that-unmade-the-boundary-cover",
+      "type": "IMAGE",
+      "title": "The Pact That Unmade The Boundary Cover",
+      "summary": "Cover image for The Pact That Unmade The Boundary story.",
+      "src": "/media/safiyya & zaynab/20260328_0045_Image Generation_remix_01kmrtz2fhfyerwzpvf0h073gv.png",
+      "alt": "Cover image for The Pact That Unmade The Boundary story",
+      "mimeType": "image/png",
+      "tags": ["cover", "archive", "story-art"],
+      "metadata": {
+        "usage": "cover ",
+        "importTest": true
+      }
     }
   ],
   

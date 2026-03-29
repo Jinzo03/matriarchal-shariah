@@ -109,23 +109,27 @@
         }
         
       ],
-      "media": []
+      "media": [{
+                    "assetId": "media.umm-yusra-story.cover",
+                    "role": "COVER",
+                    "primary": true,
+                    "sortOrder": 0,
+                    "alt": "Cover image for Umm Yusra story"
+                }]
     }
   ],
   
   "media": [
     {
-      "id": "media.umm-yusra-archive.cover-01",
-      "slug": "umm-yusra-archive-cover-01",
+      "id": "media.umm-yusra-story.cover",
+      "slug": "umm-yusra-story-cover",
       "type": "IMAGE",
-      "title": "Umm Yusra",
-      "summary": "A shared cover image for the multi-arc archive package.",
-      "src": "/media/yusra/archive-cover-01.jpg",
-      "alt": "Cover image for the Umm Yusra archive",
-      "mimeType": "image/jpeg",
-      "width": 1600,
-      "height": 900,
-      "tags": ["cover", "archive", "story-art"],
+      "title": "Umm Yusra Story Cover Image",
+      "summary": null,
+      "src": "/media/yusra/20260328_0041_Image Generation_remix_01kmrtqtzvfr08k0fpzmmhzjce.png",
+      "alt": "Cover image for Umm Yusra story",
+      "mimeType": "image/png",
+      "tags": ["cover", "story-art"],
       "metadata": {
         "usage": "archive cover ",
         "importTest": true

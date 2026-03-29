@@ -51,7 +51,7 @@
       "id": "char.ayad-ibn-maryam",       
       "type": "CHARACTER",
       "slug": "ayad-ibn-maryam",
-      "title": "Ayad ibn Maryam",
+      "title": "Ayad ibn Maryam al-Qusayri",
       "summary": "Main protagonist of story 'The Clinic of Warm Flesh' and the central figure of the fourth story chain.",
       "body": "We meet Ayad as a shamed, insecure young man. He is physically unimpressive ('not tall, not muscular, not arousing') in a world that values presence and vitality. His own mother calls him a 'little ghost' and scorns his academic degree. He is defined by what he is not—he has never been 'sealed,' he is not a 'sex architect,' and his body is considered a failure. He is an outcast, burdened by a deep-seated feeling of inadequacy.",
       "status": "ACTIVE",
@@ -153,25 +153,29 @@
         }
         
       ],
-      "media": []
+      "media": [{
+                    "assetId": "media.clinic-of-warm-flesh.cover",
+                    "role": "COVER",
+                    "primary": true,
+                    "sortOrder": 0,
+                    "alt": "Cover image for The Clinic of Warm Flesh story"
+                }]
     }
   ],
   
   "media": [
     {
-      "id": "media.sheikha-rahima-al-hanuf-archive.cover-01",
-      "slug": "sheikha-rahima-al-hanuf-archive-cover-01",
+      "id": "media.clinic-of-warm-flesh.cover",
+      "slug": "clinic-of-warm-flesh-cover",
       "type": "IMAGE",
-      "title": "Sheikha Rahima al-Hanuf",
-      "summary": "A shared cover image for the multi-arc archive package.",
-      "src": "/media/rahima-al-hanuf/archive-cover-01.jpg",
-      "alt": "Cover image for the Sheikha Rahima al-Hanuf archive",
-      "mimeType": "image/jpeg",
-      "width": 1600,
-      "height": 900,
+      "title": "The Clinic of Warm Flesh Cover",
+      "summary": "Cover image for The Clinic of Warm Flesh story.",
+      "src": "/media/rahima/20260327_0023_Image Generation_remix_01kmp7afrpe1795st7yhjcszxa.png",
+      "alt": "Cover image for The Clinic of Warm Flesh story",
+      "mimeType": "image/png",
       "tags": ["cover", "archive", "story-art"],
       "metadata": {
-        "usage": "archive cover ",
+        "usage": "cover ",
         "importTest": true
       }
     }

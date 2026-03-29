@@ -1,8 +1,8 @@
 {
   "packageId": "pkg.term",
-  "version": "1.1.0",
+  "version": "1.3.0",
   "title": "term package",
-  "description": "An import for all major terms, expanded with doctrinal and bodily vocabulary",
+  "description": "An import for all major terms",
   "source": "manual package",
   "lore": [
     {
@@ -48,16 +48,14 @@
       ],
       "tags": [
         "matriarch",
-        "term",
-        "authority",
-        "elder"
+        "authority"
       ],
       "searchKeywords": [
+        "matriarch",
         "authority",
         "elder",
-        "governance",
-        "matriarch",
-        "term"
+        "woman",
+        "govern"
       ],
       "metadata": {
         "importance": "major",
@@ -78,16 +76,14 @@
       ],
       "tags": [
         "mother",
-        "term",
-        "maternal",
-        "origin"
+        "maternal"
       ],
       "searchKeywords": [
-        "authority",
-        "maternal",
         "mother",
+        "maternal",
         "origin",
-        "term"
+        "care",
+        "authority"
       ],
       "metadata": {
         "importance": "major",
@@ -108,16 +104,14 @@
       ],
       "tags": [
         "son",
-        "term",
-        "lineage",
-        "male"
+        "lineage"
       ],
       "searchKeywords": [
-        "lineage",
-        "male",
-        "maternal",
         "son",
-        "term"
+        "male",
+        "child",
+        "descendant",
+        "lineage"
       ],
       "metadata": {
         "importance": "major",
@@ -201,16 +195,14 @@
       ],
       "tags": [
         "wilaya",
-        "term",
-        "location",
-        "authority"
+        "region"
       ],
       "searchKeywords": [
+        "wilaya",
+        "region",
+        "governed",
         "authority",
-        "jurisdiction",
-        "location",
-        "term",
-        "wilaya"
+        "doctrine"
       ],
       "metadata": {
         "importance": "major",
@@ -600,7 +592,7 @@
       "slug": "submission-term",
       "title": "Submission",
       "summary": null,
-      "body": "The act of yielding will, body, or authority to a higher power.",
+      "body": "The internal acceptance of authority beyond physical compliance.",
       "status": "ACTIVE",
       "visibility": "PUBLIC",
       "aliases": [
@@ -609,8 +601,8 @@
       "tags": [
         "submission",
         "term",
-        "yielding",
-        "authority"
+        "authority",
+        "yielding"
       ],
       "searchKeywords": [
         "authority",
@@ -2765,6 +2757,1581 @@
         "limits",
         "restriction",
         "term"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.matron",
+      "type": "TERM",
+      "slug": "matron-term",
+      "title": "Matron",
+      "summary": null,
+      "body": "A woman who holds recognized authority within a defined domain, below the rank of Matriarch.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "matron"
+      ],
+      "tags": [
+        "matron",
+        "authority"
+      ],
+      "searchKeywords": [
+        "matron",
+        "authority",
+        "woman",
+        "domain",
+        "matriarch"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.halal",
+      "type": "TERM",
+      "slug": "halal-term",
+      "title": "Halāl",
+      "summary": null,
+      "body": "That which is permitted and aligned with doctrine.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "halal",
+        "halāl"
+      ],
+      "tags": [
+        "halal",
+        "law"
+      ],
+      "searchKeywords": [
+        "halal",
+        "halāl",
+        "permitted",
+        "allowed",
+        "law",
+        "doctrine"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.haram",
+      "type": "TERM",
+      "slug": "haram-term",
+      "title": "Harām",
+      "summary": null,
+      "body": "That which is forbidden and constitutes deviation from doctrine.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "haram",
+        "harām"
+      ],
+      "tags": [
+        "haram",
+        "law"
+      ],
+      "searchKeywords": [
+        "haram",
+        "harām",
+        "forbidden",
+        "prohibited",
+        "law",
+        "doctrine"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.exposure",
+      "type": "TERM",
+      "slug": "exposure-term",
+      "title": "Exposure",
+      "summary": null,
+      "body": "The act or state of making the body or function visible under doctrinal conditions.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "exposure"
+      ],
+      "tags": [
+        "exposure",
+        "visibility"
+      ],
+      "searchKeywords": [
+        "exposure",
+        "visibility",
+        "revelation",
+        "body",
+        "doctrine"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.pact",
+      "type": "TERM",
+      "slug": "pact-term",
+      "title": "Pact",
+      "summary": null,
+      "body": "A formalized agreement binding individuals under shared roles, functions, or doctrine.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "pact"
+      ],
+      "tags": [
+        "pact",
+        "bond"
+      ],
+      "searchKeywords": [
+        "pact",
+        "agreement",
+        "bond",
+        "doctrine",
+        "role"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.fertility",
+      "type": "TERM",
+      "slug": "fertility-term",
+      "title": "Fertility",
+      "summary": null,
+      "body": "The capacity to generate, sustain, or enable creation within the system.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "fertility"
+      ],
+      "tags": [
+        "fertility",
+        "creation"
+      ],
+      "searchKeywords": [
+        "fertility",
+        "creation",
+        "capacity",
+        "gestation",
+        "system"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.divine",
+      "type": "TERM",
+      "slug": "divine-term",
+      "title": "Divine",
+      "summary": null,
+      "body": "That which is recognized as absolute, originating beyond human authority, and reflected through doctrine.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "divine"
+      ],
+      "tags": [
+        "divine",
+        "sacred"
+      ],
+      "searchKeywords": [
+        "divine",
+        "absolute",
+        "sacred",
+        "authority",
+        "doctrine"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.axis",
+      "type": "TERM",
+      "slug": "axis-term",
+      "title": "Axis",
+      "summary": null,
+      "body": "A central line or principle around which a system, body, or doctrine is organized.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "axis"
+      ],
+      "tags": [
+        "axis",
+        "structure"
+      ],
+      "searchKeywords": [
+        "axis",
+        "center",
+        "principle",
+        "structure",
+        "doctrine"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.geometry",
+      "type": "TERM",
+      "slug": "geometry-term",
+      "title": "Geometry",
+      "summary": null,
+      "body": "The structured arrangement of bodies, functions, or relationships according to defined principles.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "geometry"
+      ],
+      "tags": [
+        "geometry",
+        "structure"
+      ],
+      "searchKeywords": [
+        "geometry",
+        "structure",
+        "form",
+        "principles",
+        "bodies"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.allah",
+      "type": "TERM",
+      "slug": "allah-term",
+      "title": "Allah",
+      "summary": null,
+      "body": "The absolute divine authority recognized as the ultimate source of existence and doctrine.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "allah",
+        "Allah"
+      ],
+      "tags": [
+        "allah",
+        "divine"
+      ],
+      "searchKeywords": [
+        "allah",
+        "god",
+        "divine",
+        "authority",
+        "source"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.quran",
+      "type": "TERM",
+      "slug": "quran-term",
+      "title": "Qur’an",
+      "summary": null,
+      "body": "The primary revealed text containing foundational guidance and authority.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "quran",
+        "qur'an",
+        "qur’an"
+      ],
+      "tags": [
+        "quran",
+        "scripture"
+      ],
+      "searchKeywords": [
+        "quran",
+        "qur’an",
+        "quranic",
+        "scripture",
+        "revelation"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.ayah",
+      "type": "TERM",
+      "slug": "ayah-term",
+      "title": "Ayah",
+      "summary": null,
+      "body": "A discrete unit of revelation within the Qur’an.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "ayah",
+        "āyah",
+        "aya"
+      ],
+      "tags": [
+        "ayah",
+        "scripture"
+      ],
+      "searchKeywords": [
+        "ayah",
+        "āyah",
+        "quran",
+        "verse",
+        "revelation"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.concealment",
+      "type": "TERM",
+      "slug": "concealment-term",
+      "title": "Concealment",
+      "summary": null,
+      "body": "The act of restricting visibility or access according to doctrine.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "concealment"
+      ],
+      "tags": [
+        "concealment",
+        "visibility"
+      ],
+      "searchKeywords": [
+        "concealment",
+        "hidden",
+        "visibility",
+        "access",
+        "doctrine"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.revelation",
+      "type": "TERM",
+      "slug": "revelation-term",
+      "title": "Revelation",
+      "summary": null,
+      "body": "The controlled unveiling of a body, truth, or function.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "revelation"
+      ],
+      "tags": [
+        "revelation",
+        "truth"
+      ],
+      "searchKeywords": [
+        "revelation",
+        "unveiling",
+        "truth",
+        "body",
+        "function"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.union",
+      "type": "TERM",
+      "slug": "union-term",
+      "title": "Union",
+      "summary": null,
+      "body": "A state in which multiple entities function as a single structured system.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "union"
+      ],
+      "tags": [
+        "union",
+        "structure"
+      ],
+      "searchKeywords": [
+        "union",
+        "system",
+        "entities",
+        "structure",
+        "bond"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.bond",
+      "type": "TERM",
+      "slug": "bond-term",
+      "title": "Bond",
+      "summary": null,
+      "body": "A sustained connection defined by authority, function, or ritual.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "bond"
+      ],
+      "tags": [
+        "bond",
+        "relationship"
+      ],
+      "searchKeywords": [
+        "bond",
+        "connection",
+        "authority",
+        "ritual",
+        "function"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.center",
+      "type": "TERM",
+      "slug": "center-term",
+      "title": "Center",
+      "summary": null,
+      "body": "The focal point of authority, function, or structure.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "center"
+      ],
+      "tags": [
+        "center",
+        "structure"
+      ],
+      "searchKeywords": [
+        "center",
+        "focal",
+        "authority",
+        "structure",
+        "point"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.hierarchy",
+      "type": "TERM",
+      "slug": "hierarchy-term",
+      "title": "Hierarchy",
+      "summary": null,
+      "body": "An ordered system of ranked authority and roles.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "hierarchy"
+      ],
+      "tags": [
+        "hierarchy",
+        "authority"
+      ],
+      "searchKeywords": [
+        "hierarchy",
+        "rank",
+        "authority",
+        "roles",
+        "order"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.structure",
+      "type": "TERM",
+      "slug": "structure-term",
+      "title": "Structure",
+      "summary": null,
+      "body": "An organized arrangement of elements governed by defined relationships.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "structure"
+      ],
+      "tags": [
+        "structure",
+        "system"
+      ],
+      "searchKeywords": [
+        "structure",
+        "organization",
+        "elements",
+        "relationships",
+        "system"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.interpretation",
+      "type": "TERM",
+      "slug": "interpretation-term",
+      "title": "Interpretation",
+      "summary": null,
+      "body": "The act of deriving meaning from doctrine, text, or event.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "interpretation"
+      ],
+      "tags": [
+        "interpretation",
+        "meaning"
+      ],
+      "searchKeywords": [
+        "interpretation",
+        "meaning",
+        "doctrine",
+        "text",
+        "event"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.authority-of-interpretation",
+      "type": "TERM",
+      "slug": "authority-of-interpretation-term",
+      "title": "Authority of Interpretation",
+      "summary": null,
+      "body": "The recognized right to define meaning within doctrine.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "authority of interpretation"
+      ],
+      "tags": [
+        "authority",
+        "interpretation"
+      ],
+      "searchKeywords": [
+        "authority",
+        "interpretation",
+        "meaning",
+        "doctrine",
+        "right"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.canonical-meaning",
+      "type": "TERM",
+      "slug": "canonical-meaning-term",
+      "title": "Canonical Meaning",
+      "summary": null,
+      "body": "The officially accepted interpretation of a term, text, or concept.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "canonical meaning"
+      ],
+      "tags": [
+        "canonical",
+        "meaning"
+      ],
+      "searchKeywords": [
+        "canonical",
+        "meaning",
+        "accepted",
+        "interpretation",
+        "term"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.framework",
+      "type": "TERM",
+      "slug": "framework-term",
+      "title": "Framework",
+      "summary": null,
+      "body": "The underlying system that defines how all elements interact.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "framework"
+      ],
+      "tags": [
+        "framework",
+        "system"
+      ],
+      "searchKeywords": [
+        "framework",
+        "system",
+        "elements",
+        "interact",
+        "underlying"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.constraint",
+      "type": "TERM",
+      "slug": "constraint-term",
+      "title": "Constraint",
+      "summary": null,
+      "body": "A limitation imposed to maintain structure or order.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "constraint"
+      ],
+      "tags": [
+        "constraint",
+        "limit"
+      ],
+      "searchKeywords": [
+        "constraint",
+        "limitation",
+        "structure",
+        "order",
+        "limit"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.collapse",
+      "type": "TERM",
+      "slug": "collapse-term",
+      "title": "Collapse",
+      "summary": null,
+      "body": "The breakdown of structure, function, or alignment.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "collapse"
+      ],
+      "tags": [
+        "collapse",
+        "failure"
+      ],
+      "searchKeywords": [
+        "collapse",
+        "breakdown",
+        "structure",
+        "function",
+        "alignment"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.hadith",
+      "type": "TERM",
+      "slug": "hadith-term",
+      "title": "Hadith",
+      "summary": null,
+      "body": "A recorded statement, action, or approval attributed to a recognized authority and used as a source of guidance.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "hadith"
+      ],
+      "tags": [
+        "hadith"
+      ],
+      "searchKeywords": [
+        "hadith",
+        "term",
+        "transmission",
+        "authority"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.chain-of-transmission",
+      "type": "TERM",
+      "slug": "chain-of-transmission-term",
+      "title": "Chain of Transmission",
+      "summary": null,
+      "body": "A documented sequence of individuals through whom a statement or ruling has been passed.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "chain of transmission",
+        "isnad"
+      ],
+      "tags": [
+        "chain",
+        "transmission"
+      ],
+      "searchKeywords": [
+        "chain",
+        "transmission",
+        "isnad",
+        "term"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.authenticity",
+      "type": "TERM",
+      "slug": "authenticity-term",
+      "title": "Authenticity",
+      "summary": null,
+      "body": "The degree to which a transmitted statement is verified and accepted as valid.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "authenticity"
+      ],
+      "tags": [
+        "authenticity"
+      ],
+      "searchKeywords": [
+        "authenticity",
+        "term",
+        "verification",
+        "validity"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.daughter",
+      "type": "TERM",
+      "slug": "daughter-term",
+      "title": "Daughter",
+      "summary": null,
+      "body": "A female individual defined in relation to maternal authority and lineage.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "daughter"
+      ],
+      "tags": [
+        "daughter"
+      ],
+      "searchKeywords": [
+        "daughter",
+        "term",
+        "lineage",
+        "family"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.motherhood",
+      "type": "TERM",
+      "slug": "motherhood-term",
+      "title": "Motherhood",
+      "summary": null,
+      "body": "The state of embodying the role, authority, and function of a Mother.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "motherhood"
+      ],
+      "tags": [
+        "motherhood"
+      ],
+      "searchKeywords": [
+        "motherhood",
+        "mother",
+        "term",
+        "authority"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.offspring",
+      "type": "TERM",
+      "slug": "offspring-term",
+      "title": "Offspring",
+      "summary": null,
+      "body": "An individual produced through recognized processes of lineage and creation.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "offspring"
+      ],
+      "tags": [
+        "offspring"
+      ],
+      "searchKeywords": [
+        "offspring",
+        "term",
+        "lineage",
+        "creation"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.lineal-authority",
+      "type": "TERM",
+      "slug": "lineal-authority-term",
+      "title": "Lineal Authority",
+      "summary": null,
+      "body": "Authority derived directly through lineage.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "lineal authority"
+      ],
+      "tags": [
+        "lineal",
+        "authority"
+      ],
+      "searchKeywords": [
+        "lineal",
+        "authority",
+        "term",
+        "lineage"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.marriage",
+      "type": "TERM",
+      "slug": "marriage-term",
+      "title": "Marriage",
+      "summary": null,
+      "body": "A formally recognized union that defines roles, authority, and permitted interaction between individuals.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "marriage"
+      ],
+      "tags": [
+        "marriage"
+      ],
+      "searchKeywords": [
+        "marriage",
+        "term",
+        "union",
+        "authority"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.contract-of-union",
+      "type": "TERM",
+      "slug": "contract-of-union-term",
+      "title": "Contract of Union",
+      "summary": null,
+      "body": "A binding agreement that establishes the conditions of a marriage or pact.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "contract of union"
+      ],
+      "tags": [
+        "contract",
+        "union"
+      ],
+      "searchKeywords": [
+        "contract",
+        "union",
+        "term",
+        "marriage"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.husband",
+      "type": "TERM",
+      "slug": "husband-term",
+      "title": "Husband",
+      "summary": null,
+      "body": "A male individual assigned a defined role within a marriage under doctrinal structure.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "husband"
+      ],
+      "tags": [
+        "husband"
+      ],
+      "searchKeywords": [
+        "husband",
+        "term",
+        "marriage",
+        "role"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.wife",
+      "type": "TERM",
+      "slug": "wife-term",
+      "title": "Wife",
+      "summary": null,
+      "body": "A female individual holding a defined role within a marriage, typically aligned with authority.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "wife"
+      ],
+      "tags": [
+        "wife"
+      ],
+      "searchKeywords": [
+        "wife",
+        "term",
+        "marriage",
+        "role"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.consort",
+      "type": "TERM",
+      "slug": "consort-term",
+      "title": "Consort",
+      "summary": null,
+      "body": "A partner associated with an authority figure without necessarily holding equal rank.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "consort"
+      ],
+      "tags": [
+        "consort"
+      ],
+      "searchKeywords": [
+        "consort",
+        "term",
+        "partner",
+        "authority"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.safety",
+      "type": "TERM",
+      "slug": "safety-term",
+      "title": "Safety",
+      "summary": null,
+      "body": "A state in which a subject is protected and maintained within controlled conditions.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "safety"
+      ],
+      "tags": [
+        "safety"
+      ],
+      "searchKeywords": [
+        "safety",
+        "term",
+        "protection",
+        "state"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.protection",
+      "type": "TERM",
+      "slug": "protection-term",
+      "title": "Protection",
+      "summary": null,
+      "body": "The act of preserving a subject from harm or deviation.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "protection"
+      ],
+      "tags": [
+        "protection"
+      ],
+      "searchKeywords": [
+        "protection",
+        "term",
+        "harm",
+        "preservation"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.stability",
+      "type": "TERM",
+      "slug": "stability-term",
+      "title": "Stability",
+      "summary": null,
+      "body": "A sustained condition of order, balance, and controlled function.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "stability"
+      ],
+      "tags": [
+        "stability"
+      ],
+      "searchKeywords": [
+        "stability",
+        "term",
+        "order",
+        "balance"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.security",
+      "type": "TERM",
+      "slug": "security-term",
+      "title": "Security",
+      "summary": null,
+      "body": "The enforcement of conditions that prevent disruption or deviation.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "security"
+      ],
+      "tags": [
+        "security"
+      ],
+      "searchKeywords": [
+        "security",
+        "term",
+        "control",
+        "order"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.pleasure",
+      "type": "TERM",
+      "slug": "pleasure-term",
+      "title": "Pleasure",
+      "summary": null,
+      "body": "A controlled positive sensation permitted or regulated within doctrine.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "pleasure"
+      ],
+      "tags": [
+        "pleasure"
+      ],
+      "searchKeywords": [
+        "pleasure",
+        "term",
+        "sensation",
+        "doctrine"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.gratification",
+      "type": "TERM",
+      "slug": "gratification-term",
+      "title": "Gratification",
+      "summary": null,
+      "body": "The fulfillment of a permitted desire within defined limits.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "gratification"
+      ],
+      "tags": [
+        "gratification"
+      ],
+      "searchKeywords": [
+        "gratification",
+        "term",
+        "desire",
+        "limits"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.indulgence",
+      "type": "TERM",
+      "slug": "indulgence-term",
+      "title": "Indulgence",
+      "summary": null,
+      "body": "The act of exceeding controlled limits of pleasure.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "indulgence"
+      ],
+      "tags": [
+        "indulgence"
+      ],
+      "searchKeywords": [
+        "indulgence",
+        "term",
+        "excess",
+        "pleasure"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.restraint-of-pleasure",
+      "type": "TERM",
+      "slug": "restraint-of-pleasure-term",
+      "title": "Restraint of Pleasure",
+      "summary": null,
+      "body": "The limitation or regulation of pleasurable experience.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "restraint of pleasure"
+      ],
+      "tags": [
+        "restraint",
+        "pleasure"
+      ],
+      "searchKeywords": [
+        "restraint",
+        "pleasure",
+        "term",
+        "limit"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.devotion",
+      "type": "TERM",
+      "slug": "devotion-term",
+      "title": "Devotion",
+      "summary": null,
+      "body": "A sustained state of loyalty and attachment to authority or doctrine.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "devotion"
+      ],
+      "tags": [
+        "devotion"
+      ],
+      "searchKeywords": [
+        "devotion",
+        "term",
+        "loyalty",
+        "attachment"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.attachment",
+      "type": "TERM",
+      "slug": "attachment-term",
+      "title": "Attachment",
+      "summary": null,
+      "body": "An emotional or functional bond between individuals.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "attachment"
+      ],
+      "tags": [
+        "attachment"
+      ],
+      "searchKeywords": [
+        "attachment",
+        "term",
+        "bond",
+        "emotion"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.detachment",
+      "type": "TERM",
+      "slug": "detachment-term",
+      "title": "Detachment",
+      "summary": null,
+      "body": "The removal or absence of emotional or functional connection.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "detachment"
+      ],
+      "tags": [
+        "detachment"
+      ],
+      "searchKeywords": [
+        "detachment",
+        "term",
+        "absence",
+        "connection"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.role",
+      "type": "TERM",
+      "slug": "role-term",
+      "title": "Role",
+      "summary": null,
+      "body": "A defined set of behaviors and functions assigned to an individual.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "role"
+      ],
+      "tags": [
+        "role"
+      ],
+      "searchKeywords": [
+        "role",
+        "term",
+        "function",
+        "status"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.status",
+      "type": "TERM",
+      "slug": "status-term",
+      "title": "Status",
+      "summary": null,
+      "body": "A recognized position within the hierarchy.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "status"
+      ],
+      "tags": [
+        "status"
+      ],
+      "searchKeywords": [
+        "status",
+        "term",
+        "hierarchy",
+        "position"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.recognition",
+      "type": "TERM",
+      "slug": "recognition-term",
+      "title": "Recognition",
+      "summary": null,
+      "body": "The formal acknowledgment of a role, state, or authority.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "recognition"
+      ],
+      "tags": [
+        "recognition"
+      ],
+      "searchKeywords": [
+        "recognition",
+        "term",
+        "acknowledgment",
+        "authority"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.validation",
+      "type": "TERM",
+      "slug": "validation-term",
+      "title": "Validation",
+      "summary": null,
+      "body": "The act of confirming correctness or legitimacy.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "validation"
+      ],
+      "tags": [
+        "validation"
+      ],
+      "searchKeywords": [
+        "validation",
+        "term",
+        "confirmation",
+        "legitimacy"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.limit",
+      "type": "TERM",
+      "slug": "limit-term",
+      "title": "Limit",
+      "summary": null,
+      "body": "A defined boundary that must not be exceeded.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "limit"
+      ],
+      "tags": [
+        "limit"
+      ],
+      "searchKeywords": [
+        "limit",
+        "term",
+        "boundary",
+        "boundary"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.threshold-of-permissibility",
+      "type": "TERM",
+      "slug": "threshold-of-permissibility-term",
+      "title": "Threshold of Permissibility",
+      "summary": null,
+      "body": "The point at which an act transitions from permitted to forbidden.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "threshold of permissibility"
+      ],
+      "tags": [
+        "threshold",
+        "permissibility"
+      ],
+      "searchKeywords": [
+        "threshold",
+        "permissibility",
+        "term",
+        "boundary"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.excess",
+      "type": "TERM",
+      "slug": "excess-term",
+      "title": "Excess",
+      "summary": null,
+      "body": "The act of surpassing defined limits.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "excess"
+      ],
+      "tags": [
+        "excess"
+      ],
+      "searchKeywords": [
+        "excess",
+        "term",
+        "limit",
+        "surplus"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.dependence",
+      "type": "TERM",
+      "slug": "dependence-term",
+      "title": "Dependence",
+      "summary": null,
+      "body": "A state in which a subject relies on authority for function or stability.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "dependence"
+      ],
+      "tags": [
+        "dependence"
+      ],
+      "searchKeywords": [
+        "dependence",
+        "term",
+        "authority",
+        "reliance"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.authority-bond",
+      "type": "TERM",
+      "slug": "authority-bond-term",
+      "title": "Authority Bond",
+      "summary": null,
+      "body": "A relationship defined primarily by control and hierarchy.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "authority bond"
+      ],
+      "tags": [
+        "authority",
+        "bond"
+      ],
+      "searchKeywords": [
+        "authority",
+        "bond",
+        "term",
+        "hierarchy"
+      ],
+      "metadata": {
+        "importance": "major",
+        "importTest": true
+      }
+    },
+    {
+      "id": "term.mutual-function",
+      "type": "TERM",
+      "slug": "mutual-function-term",
+      "title": "Mutual Function",
+      "summary": null,
+      "body": "A structured relationship where each participant fulfills a defined role.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": [
+        "mutual function"
+      ],
+      "tags": [
+        "mutual",
+        "function"
+      ],
+      "searchKeywords": [
+        "mutual",
+        "function",
+        "term",
+        "relationship"
       ],
       "metadata": {
         "importance": "major",

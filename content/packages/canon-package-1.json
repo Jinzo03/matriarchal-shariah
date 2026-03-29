@@ -111,38 +111,35 @@
           "targetId": "inst.sanctum-of-guardian-arts"
         }
       ],
-      "media": []
+      "media": [{
+                    "assetId": "media.the-shams-rise.cover",
+                    "role": "COVER",
+                    "primary": true,
+                    "sortOrder": 0,
+                    "alt": "Cover image for The Shams Rise story"
+                }]
     }
   ],
   
   "media": [
     {
-                  "id": "media.qamar.portrait-01",
-                  "type": "IMAGE",
-                "title": "Sheikha Qamar Portrait"
+      "id": "media.the-shams-rise.cover",
+      "slug": "the-shams-rise-cover",
+      "type": "IMAGE",
+      "title": "The Shams Rise Cover Image",
+      "summary": null,
+      "src": "/media/qamar/20260328_0037_Image Generation_remix_01kmrtghvke3yamvhzrwyzzv5h.png",
+      "alt": "Cover image for The Shams Rise story",
+      "mimeType": "image/png",
+      "tags": ["cover", "story-art"],
+      "metadata": {
+        "usage": "archive cover ",
+        "importTest": true
+      }
     }
-    
   ],
   "metadata": {
-    
-                  "id": "media.qamar.portrait-01",
-                  "slug": "qamar-portrait-01",
-                    "type": "IMAGE",
-                    "title": "Sheikha Qamar Portrait",
-                      "summary": "Portrait art for Qamar al-Zahra.",
-                      "src": "/media/qamar/20250501_1355_Dynamic Pose in Setting_remix_01jt5ymv1qfv09naw6c69b4b6c.jpeg",
-                  "alt": "Sheikha Qamar al-Zahra portrait",
-                      "mimeType": "image/jpeg",
-                      "width": 500,
-                      "height": 500,
-            "tags": ["portrait", "character-art"],
-                "metadata": {
-            "credit": "unknown",
-    "usage": "character portrait"
-
-                          },
-
-    "importPurpose": "first canon package import",
+    "importPurpose": "canon package import",
     "canonical": true
 }
 }
