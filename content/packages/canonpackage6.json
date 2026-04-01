@@ -194,6 +194,36 @@
                 }]
     }
   ],
+  "lore" : [
+    {
+      "id": "inst.council-of-milk",
+      "type": "INSTITUTION",
+      "slug": "inst-council-of-milk",
+      "title": "Maḥkamat al-Lubn",
+      "summary": "The Council of Milk is the institutional authority responsible for maintaining the \"Law of Wombs\" and the \"harmony of Pact-Bonded Flesh.",
+      "body": "Literal Meaning and Symbolic Significance :\r\n\r\nCouncil of Milk: The name itself is foundational. In this matriarchal society, milk is not just nourishment; it is the substance of law, lineage, sanctity, and power. It is the \"ink of decree.\" A council named for milk is therefore the source of all binding judgments.\r\n\r\nThe Court of Milk: The alternate name, Ma\u1E25kamat al-Lubn, translates to \"The Court of Milk,\" reinforcing its role as a judicial body where fates are decided.\r\n\r\n2. Role and Function\r\n\r\nThe Council of Milk is the institutional authority responsible for maintaining the \"Law of Wombs\" and the \"harmony of Pact-Bonded Flesh.\"\r\n\r\nJudicial Authority: Its primary function is to adjudicate matters related to sacred pacts, theological transgressions, and the roles of boys within their system. It is the body that first deems Ala \"liminal\" and sanctions the formation of the Three-Bodied Womb. It later convenes the final, terrifying trial to address the pact's \"breakage.\"\r\n\r\nLegislative and Interpretive Power: The Council interprets the sacred texts, like the Umm al-Kutub al-Thal\u0101thiyya, and issues rulings. However, it is shown to have limits. When faced with the \"unthinkable\" paradox of Zaynab and \u1E62afiyya's love, it must defer to the higher authority of the Great Matriarchal Council of the 127 Ummahs. The Council of Milk can enforce existing laws but seems to struggle with creating entirely new ones.\r\n\r\nEnforcement Body: The Council has \"junior clerks\" and \"Milk Attendants\" who carry out its decrees. Its power is absolute, and its verdicts are carried out with ritual precision. Sheikha Ibtih\u0101l acts as its primary field agent.\r\n\r\n3. Culture and Atmosphere\r\n\r\nThe Council is portrayed as a place of immense power, solemnity, and fear.\r\nConvenes in Silence: \"The Council of Milk convened only in silence.\" This highlights its mysterious and grave nature. Its proceedings are not open debates but sacred, hushed reckonings.\r\n\r\nDominated by Elder Sheikhas: Its members are elder, powerful matriarchs who are the keepers of ancient traditions. They are described with imagery of exposed breasts, which in their culture is a sign of ecclesial authority and \"lactational harmony.\"\r\n\r\nRitualistic and Geometrical: Its chambers, like the \"Crescent Chamber\" and the \"Atrium of Judgment,\" are designed with sacred geometry. Judgments are not just spoken; they are enacted in a space charged with symbolism, myrrh, and the \"weight of truth.\" The atmosphere is thick, and the stakes are always a person's spiritual life or death.\r\n\r\n4. Its Verdicts and Ideology\r\nThe Council's ideology reflects the broader values of its society:\r\n\r\nThe Primacy of the Womb: The \"Law of Wombs\" is its highest concern. Everything must serve the purpose of generation, sanctification, and the proper channeling of feminine power.\r\n\r\nThe Necessity of the Male Axis: Until the final act of the story, the Council's entire jurisprudence is built on the idea that a male presence is necessary to stabilize and sanctify female-female intimacy. This is the core law that Zaynab and \u1E62afiyya's relationship challenges.\r\n\r\nNo Room for Ambiguity: The Council deals in absolutes. A boy is either useful or he is not. A pact is either successful or it is dissolved. When Ala fails to choose one of the four doors, the Council cannot comprehend his inaction and must escalate his case. They cannot tolerate a \"boy with no place.\"\r\n\r\nIn summary, the Council of Milk is the story's symbol of institutional religious power. It is ancient, rigid, and steeped in ritual. While it is the force that initially creates Ala's unique situation, it is ultimately shown to be incapable of handling the profound, messy, and beautiful reality of the love that blossoms within the pact, forcing an intervention from an even higher, more primal authority.",
+      "status": "ACTIVE",
+      "visibility": "PUBLIC",
+      "aliases": ["sheikha", "council","authority"],
+      "tags": ["sheikha", "authority", "matriarch", "council"],
+      "searchKeywords": ["authority", "matriarch", "sheikha", "knowledge", "fatwa", "female", "sheikha ibtihal","sacred","wound","pact","harmony","judgment"],
+      "metadata": {
+        "category": "institution",
+        "importance": "major",
+        "importTest": true
+      },
+      "relations": [
+        {
+          "type": "LOCATED_IN",
+          "targetId": "loc.haramayn"
+        },
+        {
+          "type": "RELATED_TO",
+          "targetId": "char.sheikha-ibtihal-al-fazariyya"
+        }
+      ]
+    }
+  ],
   "media": [
     {
       "id": "media.the-pact-that-unmade-the-boundary.cover",

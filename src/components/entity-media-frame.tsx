@@ -6,7 +6,7 @@ type EntityMediaFrameProps = {
   title?: string | null;
   width?: number | null;
   height?: number | null;
-  variant?: "card" | "hero";
+  variant?: "card" | "section" | "hero" | "full";
 };
 
 function getAspectRatio(width?: number | null, height?: number | null) {
@@ -50,6 +50,40 @@ export function EntityMediaFrame({
             style={aspectRatio ? { aspectRatio, width: "auto", height: "auto" } : { width: "auto", height: "auto" }}
           />
         </div>
+      </div>
+    );
+  }
+
+  if (variant === "section") {
+    return (
+      <div className="border-b border-border/60 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01))] px-4 py-4">
+        <div className="flex justify-center overflow-hidden rounded-2xl border border-border/40 bg-background/60 p-3">
+          <Image
+            src={src}
+            alt={alt || title || ""}
+            width={dimensions.width}
+            height={dimensions.height}
+            sizes="(min-width: 1024px) 40vw, 100vw"
+            className="block max-h-[32rem] max-w-full object-contain"
+            style={aspectRatio ? { aspectRatio, width: "auto", height: "auto" } : { width: "auto", height: "auto" }}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  if (variant === "full") {
+    return (
+      <div className="mt-5 overflow-hidden rounded-2xl border border-border/50 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))] p-3">
+        <Image
+          src={src}
+          alt={alt || title || ""}
+          width={dimensions.width}
+          height={dimensions.height}
+          sizes="(min-width: 1024px) 720px, 100vw"
+          className="block w-full rounded-xl object-contain"
+          style={aspectRatio ? { aspectRatio, width: "100%", height: "auto" } : { width: "100%", height: "auto" }}
+        />
       </div>
     );
   }

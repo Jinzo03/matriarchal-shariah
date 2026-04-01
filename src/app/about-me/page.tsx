@@ -46,7 +46,7 @@ const creatorNotes = [
   {
     title: "Who I Am",
     body:
-      "I’m the one who’s obsessed with matriarchal power, the soft but absolute kind. I love writing worlds where women rule completely, where men submit beautifully, and where things like breastfeeding, obedience, and ritual sex become sacred instead of shameful.I spend my days coding this archive and my nights (and a lot of days too) writing the stories and building the lore. This project is where my coding brain and my filthy devotional brain finally get to fuck around together.",
+      "I’m the one who’s obsessed with matriarchal power, the soft but absolute kind. I love writing worlds where women rule completely, where men submit beautifully, and where things like breastfeeding, obedience, and ritual sex become sacred instead of shameful.I spend my days coding this archive and my nights (and a lot of days too) writing the stories and building the lore. This project is where my coding brain and my filthy devotional brain finally get to fuck around together. I'm also into macrophilia so I LOVE giantesses a lot !",
   },
   {
     title: "What This Space Holds",
@@ -60,7 +60,7 @@ const creatorNotes = [
   {
     title: "What Comes Next",
     body:
-      "More canon is coming, new Sheikhas, deeper doctrines, longer timeline stuff, all of it.I’ll start adding more images and media soon.And yeah… you’ll be seeing a lot more of my mascot (the girl from my X profile pic). She’s basically me in cartoon form. I love her stupidly much and I use her expressions when I want to say something without saying it directly.",
+      "More canon is coming, new Sheikhas, deeper doctrines, longer timeline stuff, all of it.I’ll start adding more images and media soon.And yeah… you’ll be seeing a lot more of my mascot (the girl from my X profile pic). I love her stupidly much and I use her expressions when I want to say something without saying it directly.",
   },
 ];
 
@@ -113,26 +113,18 @@ function renderMediaGroup(items: CreatorMedia[]) {
   }
 
   return (
-    <div className="mt-5 grid gap-4 sm:grid-cols-2">
+    <div className="mt-5 space-y-5">
       {items.map((item) => (
-        <article
-          key={item.id}
-          className="overflow-hidden rounded-2xl border border-border/70 bg-card/40"
-        >
+        <div key={item.id}>
           <EntityMediaFrame
             src={item.src}
             alt={item.alt || item.title}
             title={item.title}
             width={item.width}
             height={item.height}
+            variant="full"
           />
-          <div className="p-4">
-            <h3 className="font-medium">{item.title}</h3>
-            {item.summary ? (
-              <p className="mt-2 text-sm text-muted-foreground">{item.summary}</p>
-            ) : null}
-          </div>
-        </article>
+        </div>
       ))}
     </div>
   );

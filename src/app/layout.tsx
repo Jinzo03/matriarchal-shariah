@@ -34,7 +34,13 @@ export default async function RootLayout({
   const locale: Locale = isLocale(rawLocale) ? rawLocale : DEFAULT_LOCALE;
 
   return (
-    <html lang={locale} dir={localeDir[locale]} className="dark" suppressHydrationWarning>
+    <html
+      lang={locale}
+      dir={localeDir[locale]}
+      className="dark"
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
       <body
         className={`${inter.variable} ${cormorant.variable} min-h-screen bg-background text-foreground antialiased`}
       >

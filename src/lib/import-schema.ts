@@ -62,6 +62,36 @@ export const MediaRoleSchema = z.enum([
 
 const MetadataSchema = z.record(z.string(), z.unknown()).optional();
 
+function deriveMediaTitle(input: {
+  title?: string | null;
+  alt?: string | null;
+  slug: string;
+  id: string;
+}) {
+  const explicitTitle = input.title?.trim();
+  if (explicitTitle) {
+    return explicitTitle;
+  }
+
+  const altTitle = input.alt?.trim();
+  if (altTitle) {
+    return altTitle;
+  }
+
+  const slugTitle = input.slug
+    .split(/[-_.]+/)
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ")
+    .trim();
+
+  if (slugTitle) {
+    return slugTitle;
+  }
+
+  return input.id;
+}
+
 function addDuplicateIssue(
   ctx: z.RefinementCtx,
   path: (string | number)[],
@@ -129,21 +159,26 @@ export const TimelineEventSchema = BaseContentSchema.extend({
   type: z.literal("EVENT"),
 });
 
-export const MediaAssetSchema = z.object({
-  id: z.string().min(1),
-  slug: z.string().min(1),
-  type: MediaKindSchema.default("IMAGE"),
-  title: z.string().min(1),
-  summary: z.string().optional().nullable(),
-  src: z.string().min(1),
-  alt: z.string().optional().nullable(),
-  mimeType: z.string().optional().nullable(),
-  width: z.number().int().positive().optional(),
-  height: z.number().int().positive().optional(),
-  credit: z.string().optional().nullable(),
-  tags: z.array(z.string().min(1)).default([]),
-  metadata: MetadataSchema,
-});
+export const MediaAssetSchema = z
+  .object({
+    id: z.string().min(1),
+    slug: z.string().min(1),
+    type: MediaKindSchema.default("IMAGE"),
+    title: z.string().optional().nullable(),
+    summary: z.string().optional().nullable(),
+    src: z.string().min(1),
+    alt: z.string().optional().nullable(),
+    mimeType: z.string().optional().nullable(),
+    width: z.number().int().positive().optional(),
+    height: z.number().int().positive().optional(),
+    credit: z.string().optional().nullable(),
+    tags: z.array(z.string().min(1)).default([]),
+    metadata: MetadataSchema,
+  })
+  .transform((asset) => ({
+    ...asset,
+    title: deriveMediaTitle(asset),
+  }));
 
 export const UniversePackageSchema = z
   .object({
