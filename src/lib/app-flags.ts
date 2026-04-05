@@ -20,11 +20,11 @@ function parseBooleanFlag(value: string | undefined, defaultValue: boolean) {
 }
 
 export const SHOW_ADMIN_UI = parseBooleanFlag(
-  process.env.NEXT_PUBLIC_SHOW_ADMIN_UI = "false",
+  process.env.NEXT_PUBLIC_SHOW_ADMIN_UI ?? "false",
   process.env.NODE_ENV !== "production"
 );
 
 export const ENABLE_ADMIN_MUTATIONS = parseBooleanFlag(
-  process.env.ENABLE_ADMIN_MUTATIONS = "false",
+  process.env.ENABLE_ADMIN_MUTATIONS ?? "false",
   process.env.NODE_ENV !== "production"
 );
