@@ -1,0 +1,43 @@
+MATRIARCHIVE PROPRIETARY LICENSE
+Version 1.0
+
+Copyright (c) 2026 [Jinzo03]
+All rights reserved.
+
+1. Grant of Limited Permission
+Permission is granted to view, access, and use this repository and its deployed application solely for personal, non-exclusive, non-transferable, revocable, non-commercial viewing and reading purposes, subject to the terms of this License.
+
+2. Restrictions
+You may not, without prior written permission from the copyright holder:
+- copy, clone, mirror, or redistribute the repository or any substantial portion of it except as required for ordinary GitHub/Vercel operation and viewing;
+- modify, adapt, translate, or create derivative works from the code, content, lore, artwork, text, data, structure, or any other material in this project;
+- publish, sublicense, sell, lease, rent, or commercially exploit the project or any derivative;
+- remove, alter, or obscure copyright notices, attribution notices, or this License;
+- represent the project, its code, its content, its lore, its structure, its design, or any related work as your own;
+- train, fine-tune, or otherwise use the project or its contents for machine learning or AI model training without express written consent.
+
+3. Hosting and Deployment Exception
+A limited non-exclusive license is granted to connected deployment and infrastructure services used by the copyright holder, including source control, build, deployment, cache, and hosting platforms such as GitHub and Vercel, solely for the purpose of storing, building, deploying, caching, and serving this project on behalf of the copyright holder.
+
+4. Contributions
+Any contribution submitted by pull request, issue, patch, or other form remains subject to review and acceptance by the copyright holder. Submission of a contribution does not grant any rights unless and until the copyright holder explicitly accepts it in writing or by merge. By submitting a contribution, the contributor represents that they have the right to submit it.
+
+5. Ownership of Content
+All code, text, lore, worldbuilding, names, terminology, documents, structure, design, visual treatment, data models, and related materials in this repository and its deployed application are proprietary to the copyright holder unless explicitly stated otherwise.
+
+6. No Implied Rights
+No license or right is granted by implication, estoppel, waiver, or otherwise except as expressly stated in this License.
+
+7. Termination
+Any violation of this License automatically terminates all permissions granted herein. Upon termination, you must immediately cease all use of the project and delete any copies under your control, except where retention is required by law.
+
+8. Warranty Disclaimer
+This project is provided "as is", without warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, non-infringement, and uninterrupted operation.
+
+9. Limitation of Liability
+To the maximum extent permitted by law, the copyright holder shall not be liable for any damages, claims, losses, or liabilities arising from use of, access to, or inability to use this project.
+
+10. Governing Law
+This License shall be interpreted and enforced under the laws chosen by the copyright holder in the applicable jurisdiction.
+
+For permissions beyond the scope of this License, contact the copyright holder directly.

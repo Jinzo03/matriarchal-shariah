@@ -1,3 +1,5 @@
+© 2026 [Jinzo03]. All rights reserved. This project is proprietary and governed by the MatriArchive Proprietary License v1.0.
+
 # MatriArchive
 
 MatriArchive is a Next.js 16 + Prisma app for building and browsing a connected universe of entities, relationships, revisions, media, and imports.
