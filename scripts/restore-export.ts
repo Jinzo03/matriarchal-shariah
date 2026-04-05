@@ -132,109 +132,107 @@ async function main() {
     console.log(`Relationships: ${parsed.relationships.length}`);
     console.log(`Revisions: ${parsed.revisions.length}`);
 
-    await prisma.$transaction(async (tx) => {
-      if (shouldClear) {
-        await tx.relationship.deleteMany();
-        await tx.entityRevision.deleteMany();
-        await tx.entityMedia.deleteMany();
-        await tx.importLog.deleteMany();
-        await tx.importJob.deleteMany();
-        await tx.entity.deleteMany();
-        await tx.mediaAsset.deleteMany();
-      }
+    if (shouldClear) {
+      await prisma.relationship.deleteMany();
+      await prisma.entityRevision.deleteMany();
+      await prisma.entityMedia.deleteMany();
+      await prisma.importLog.deleteMany();
+      await prisma.importJob.deleteMany();
+      await prisma.entity.deleteMany();
+      await prisma.mediaAsset.deleteMany();
+    }
 
-      for (const entity of parsed.entities) {
-        await tx.entity.upsert({
-          where: { id: entity.id },
-          create: {
-            ...entity,
-            parentId: null,
-            metadata: toNullableJson(entity.metadata),
-          },
-          update: {
-            type: entity.type,
-            title: entity.title,
-            slug: entity.slug,
-            summary: entity.summary,
-            body: entity.body,
-            status: entity.status,
-            visibility: entity.visibility,
-            aliases: entity.aliases,
-            tags: entity.tags,
-            searchKeywords: entity.searchKeywords,
-            featuredImage: entity.featuredImage,
-            metadata: toNullableJson(entity.metadata),
-            createdAt: entity.createdAt,
-            updatedAt: entity.updatedAt,
-            version: entity.version,
-            parentId: null,
-          },
-        });
-      }
+    for (const entity of parsed.entities) {
+      await prisma.entity.upsert({
+        where: { id: entity.id },
+        create: {
+          ...entity,
+          parentId: null,
+          metadata: toNullableJson(entity.metadata),
+        },
+        update: {
+          type: entity.type,
+          title: entity.title,
+          slug: entity.slug,
+          summary: entity.summary,
+          body: entity.body,
+          status: entity.status,
+          visibility: entity.visibility,
+          aliases: entity.aliases,
+          tags: entity.tags,
+          searchKeywords: entity.searchKeywords,
+          featuredImage: entity.featuredImage,
+          metadata: toNullableJson(entity.metadata),
+          createdAt: entity.createdAt,
+          updatedAt: entity.updatedAt,
+          version: entity.version,
+          parentId: null,
+        },
+      });
+    }
 
-      for (const entity of parsed.entities) {
-        if (!entity.parentId) continue;
+    for (const entity of parsed.entities) {
+      if (!entity.parentId) continue;
 
-        await tx.entity.update({
-          where: { id: entity.id },
-          data: {
-            parentId: entity.parentId,
-          },
-        });
-      }
+      await prisma.entity.update({
+        where: { id: entity.id },
+        data: {
+          parentId: entity.parentId,
+        },
+      });
+    }
 
-      for (const revision of parsed.revisions) {
-        await tx.entityRevision.upsert({
-          where: { id: revision.id },
-          create: {
-            ...revision,
-            metadata: toNullableJson(revision.metadata),
-          },
-          update: {
-            entityId: revision.entityId,
-            version: revision.version,
-            title: revision.title,
-            slug: revision.slug,
-            summary: revision.summary,
-            body: revision.body,
-            status: revision.status,
-            visibility: revision.visibility,
-            aliases: revision.aliases,
-            tags: revision.tags,
-            searchKeywords: revision.searchKeywords,
-            metadata: toNullableJson(revision.metadata),
-            createdAt: revision.createdAt,
-          },
-        });
-      }
+    for (const revision of parsed.revisions) {
+      await prisma.entityRevision.upsert({
+        where: { id: revision.id },
+        create: {
+          ...revision,
+          metadata: toNullableJson(revision.metadata),
+        },
+        update: {
+          entityId: revision.entityId,
+          version: revision.version,
+          title: revision.title,
+          slug: revision.slug,
+          summary: revision.summary,
+          body: revision.body,
+          status: revision.status,
+          visibility: revision.visibility,
+          aliases: revision.aliases,
+          tags: revision.tags,
+          searchKeywords: revision.searchKeywords,
+          metadata: toNullableJson(revision.metadata),
+          createdAt: revision.createdAt,
+        },
+      });
+    }
 
-      for (const relationship of parsed.relationships) {
-        await tx.relationship.upsert({
-          where: { id: relationship.id },
-          create: {
-            id: relationship.id,
-            type: relationship.type,
-            sourceEntityId: relationship.sourceEntityId,
-            targetEntityId: relationship.targetEntityId,
-            notes: relationship.notes,
-            weight: relationship.weight ?? null,
-            directionality: relationship.directionality,
-            createdAt: relationship.createdAt,
-            updatedAt: relationship.updatedAt,
-          },
-          update: {
-            type: relationship.type,
-            sourceEntityId: relationship.sourceEntityId,
-            targetEntityId: relationship.targetEntityId,
-            notes: relationship.notes,
-            weight: relationship.weight ?? null,
-            directionality: relationship.directionality,
-            createdAt: relationship.createdAt,
-            updatedAt: relationship.updatedAt,
-          },
-        });
-      }
-    });
+    for (const relationship of parsed.relationships) {
+      await prisma.relationship.upsert({
+        where: { id: relationship.id },
+        create: {
+          id: relationship.id,
+          type: relationship.type,
+          sourceEntityId: relationship.sourceEntityId,
+          targetEntityId: relationship.targetEntityId,
+          notes: relationship.notes,
+          weight: relationship.weight ?? null,
+          directionality: relationship.directionality,
+          createdAt: relationship.createdAt,
+          updatedAt: relationship.updatedAt,
+        },
+        update: {
+          type: relationship.type,
+          sourceEntityId: relationship.sourceEntityId,
+          targetEntityId: relationship.targetEntityId,
+          notes: relationship.notes,
+          weight: relationship.weight ?? null,
+          directionality: relationship.directionality,
+          createdAt: relationship.createdAt,
+          updatedAt: relationship.updatedAt,
+        },
+      });
+    }
 
     console.log("Restore complete.");
   } finally {
