@@ -117,7 +117,11 @@ export function BrowseSections({
         const hiddenCount = Math.max(section.items.length - DEFAULT_VISIBLE_ITEMS, 0);
 
         return (
-          <div key={section.type} className="ms-panel p-6">
+          <div
+            key={section.type}
+            id={`browse-${section.type.toLowerCase()}`}
+            className="ms-panel scroll-mt-24 p-6"
+          >
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
                 <h2 className="text-lg font-semibold">{section.label}</h2>

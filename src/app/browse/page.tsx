@@ -32,6 +32,10 @@ const typeLabels: Record<EntityType, string> = {
   OTHER: "Other",
 };
 
+function getBrowseSectionId(type: EntityType) {
+  return `browse-${type.toLowerCase()}`;
+}
+
 type BrowseEntity = {
   id: string;
   title: string;
@@ -156,10 +160,13 @@ export default async function BrowsePage() {
         <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {typeOrder.map((type, index) => (
             <Reveal key={type} delay={index * 0.03}>
-              <div className="ms-panel-soft p-4">
+              <Link
+                href={`#${getBrowseSectionId(type)}`}
+                className="ms-panel-soft block p-4 transition hover:bg-accent"
+              >
                 <p className="text-sm text-muted-foreground">{typeLabels[type]}</p>
                 <p className="mt-2 text-2xl font-semibold">{grouped[type]?.length ?? 0}</p>
-              </div>
+              </Link>
             </Reveal>
           ))}
         </section>
